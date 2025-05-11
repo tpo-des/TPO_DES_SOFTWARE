@@ -1,7 +1,6 @@
-import java.util.List;
+package Modelo;
 
-import Modelo.Partido;
-import Modelo.Usuario;
+import java.util.List;
 
 public interface Strategy {
     

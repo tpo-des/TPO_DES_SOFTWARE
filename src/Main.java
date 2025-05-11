@@ -1,5 +1,3 @@
-import java.util.Scanner;
-
 import Controlador.ControladorPartido;
 import Controlador.ControladorUsuario;
 import Modelo.RepositorioPartidos;
@@ -7,6 +5,8 @@ import Modelo.RepositorioUsuarios;
 import Modelo.Usuario;
 import Vista.VistaPartido;
 import Vista.VistaUsuario;
+
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
@@ -32,7 +32,7 @@ public class Main {
             if (usuarioActual == null) {
                 System.out.println("1. Registrarse");
                 System.out.println("2. Iniciar sesión");
-                System.out.println("3. Buscar partidos");
+                System.out.println("3. Buscar partidos sin cuenta");
                 System.out.println("4. Salir");
 
                 String opcion = sc.nextLine();
@@ -40,20 +40,21 @@ public class Main {
                 switch (opcion) {
                     case "1" -> vistaUsuario.mostrarMenu(); // registrar
                     case "2" -> {
-                        usuarioActual = vistaUsuario.login(); // este debe devolver el Usuario
+                        usuarioActual = vistaUsuario.login(); // este devuelve Usuario
                         if (usuarioActual != null) {
-                            System.out.println("Sesión iniciada como: " + usuarioActual.getNombreUsuario());
+                            System.out.println("✔ Sesión iniciada como: " + usuarioActual.getNombreUsuario());
                         }
                     }
                     case "3" -> vistaPartido.buscarPartidos();
                     case "4" -> {
-                        System.out.println("Saliendo...");
+                        System.out.println("Hasta luego!");
                         return;
                     }
-                    default -> System.out.println("Opción inválida");
+                    default -> System.out.println("❌ Opción inválida");
                 }
 
             } else {
+                System.out.println("\n✔ Sesión: " + usuarioActual.getNombreUsuario());
                 System.out.println("1. Crear partido");
                 System.out.println("2. Buscar partidos");
                 System.out.println("3. Unirse a un partido");
@@ -71,7 +72,7 @@ public class Main {
                         System.out.println("Sesión cerrada.");
                         usuarioActual = null;
                     }
-                    default -> System.out.println("Opción inválida");
+                    default -> System.out.println("❌ Opción inválida");
                 }
             }
         }

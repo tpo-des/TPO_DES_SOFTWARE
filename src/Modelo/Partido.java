@@ -7,7 +7,6 @@ import Modelo.Estados.Confirmado;
 import Modelo.Estados.EstadoPartido;
 import Modelo.Estados.NecesitamosJugadores;
 import Modelo.Estados.PartidoArmado;
-import Strategy;
 
 public class Partido {
     private String deporte;
