@@ -33,20 +33,27 @@ public class VistaPartido {
 
             System.out.print("Fecha (AAAA/MM/DD): ");
             String fecha = sc.nextLine();
+
             System.out.print("Hora (HH:MM): ");
             String hora = sc.nextLine();
+
+            System.out.print("Duración (horas): ");
+            int duracion = Integer.parseInt(sc.nextLine());
 
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm");
             LocalDateTime fechaHora = LocalDateTime.parse(fecha + " " + hora, formatter);
 
-            controlador.crearPartido(deporte, cantidad, ubicacion, fechaHora);
+            controlador.crearPartido(deporte, cantidad, ubicacion, fechaHora, duracion);
             System.out.println("✅ Partido creado con éxito.");
         } catch (DateTimeParseException e) {
             System.out.println("❌ Formato de fecha/hora inválido.");
+        } catch (NumberFormatException e) {
+            System.out.println("❌ Duración inválida. Ingresá un número entero.");
         } catch (Exception e) {
             System.out.println("❌ Error: " + e.getMessage());
         }
     }
+
 
     public void buscarPartidos() {
         System.out.print("Buscar partidos por deporte: ");
@@ -54,16 +61,18 @@ public class VistaPartido {
         System.out.print("Ubicación: ");
         String ubicacion = sc.nextLine();
 
-        List<Partido> resultados = controlador.buscarPartidos(deporte, ubicacion);
+        List<Partido> resultados = controlador.buscarPartidosNoFinalizados(deporte, ubicacion);
         if (resultados.isEmpty()) {
             System.out.println("No se encontraron partidos disponibles.");
         } else {
             System.out.println("Partidos encontrados:");
             for (Partido p : resultados) {
+                p.transicionar(); // actualiza estado antes de mostrar
                 System.out.println(p);
             }
         }
     }
+
 
     public void unirseAPartido(Usuario usuario) {
         List<Partido> disponibles = controlador.BuscarPartidosAbiertos();

@@ -3,10 +3,7 @@ import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
-import Modelo.Estados.Confirmado;
-import Modelo.Estados.EstadoPartido;
-import Modelo.Estados.NecesitamosJugadores;
-import Modelo.Estados.PartidoArmado;
+import Modelo.Estados.*;
 
 public class Partido {
     private String deporte;
@@ -17,11 +14,11 @@ public class Partido {
     private EstadoPartido estado;
     private List<Usuario> jugadoresConfirmados = new ArrayList<>();
     private Strategy estrategiaEmparejamiento = new PorLocalidadStrategy(); // por defecto
+    private int duracion; // en horas
 
 
 
-
-    public Partido(String deporte, int cantidadJugadores, String ubicacion, LocalDateTime horario) {
+    public Partido(String deporte, int cantidadJugadores, String ubicacion, LocalDateTime horario,  int duracion) {
         this.deporte = deporte;
         this.cantidadJugadores = cantidadJugadores;
         this.ubicacion = ubicacion;
@@ -29,7 +26,8 @@ public class Partido {
         this.jugadores = new ArrayList<>();
         this.estado = new NecesitamosJugadores(); // Estado inicial
         this.jugadoresConfirmados = new ArrayList<>();
-        
+        this.duracion = duracion;
+
     }
 
 
@@ -82,16 +80,32 @@ public class Partido {
         }
     }
 
-    // Transición automática de estado
     public void transicionar() {
+        LocalDateTime ahora = LocalDateTime.now();
+
         if (estado instanceof NecesitamosJugadores && jugadores.size() == cantidadJugadores) {
             setEstado(new PartidoArmado());
             System.out.println("✔ El partido cambió de estado a: " + estado.getNombre());
         }
-
-        // En una versión futura podés seguir con más:
-        // if (estado instanceof PartidoArmado && ... ) setEstado(new Confirmado());
-        // if (LocalDateTime.now().isAfter(horario)) setEstado(new EnJuego());
+        else if (estado instanceof PartidoArmado) {
+            // Podrías agregar lógica para pasar a Confirmado si todos confirman
+            // Por ahora no implementado
+        }
+        else if (estado instanceof Confirmado) {
+            if (ahora.isAfter(horario) && ahora.isBefore(horario.plusHours(duracion))) {
+                setEstado(new EnJuego());
+                System.out.println("▶ El partido comenzó y está en juego.");
+            } else if (ahora.isAfter(horario.plusHours(duracion))) {
+                setEstado(new Finalizado());
+                System.out.println("✔ El partido ha finalizado.");
+            }
+        }
+        else if (estado instanceof EnJuego) {
+            if (ahora.isAfter(horario.plusHours(duracion))) {
+                setEstado(new Finalizado());
+                System.out.println("✔ El partido ha finalizado.");
+            }
+        }
     }
 
     private void setEstado(EstadoPartido nuevoEstado) {
@@ -112,7 +126,7 @@ public class Partido {
 
     @Override
     public String toString() {
-        return deporte + " en " + ubicacion + " - Estado: " + estado.getNombre() + " - Faltan: " + getFaltantes();
+        return deporte + " en " + ubicacion + " - Duración: " + duracion + " hs - Estado: " + estado.getNombre() + " - Faltan: " + getFaltantes();
     }
 
     public void setDeporte(String deporte) {

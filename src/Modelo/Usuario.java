@@ -3,18 +3,19 @@ public class Usuario {
     private String nombreUsuario;
     private String correo;
     private String contraseña;
-    private String deporteFavorito; // opcional
-    private Nivel nivel;
-    private String localidad; // opcional
+    private String deporteFavorito; // opcional (Puede ser null)
+    private Nivel nivel; // opcional (Puede ser null)
+    private String localidad;
 
     public enum Nivel { PRINCIPIANTE, INTERMEDIO, AVANZADO }
 
-    public Usuario(String nombreUsuario, String correo, String contraseña, String deporteFavorito, Nivel nivel) {
+    public Usuario(String nombreUsuario, String correo, String contraseña, String deporteFavorito, Nivel nivel, String localidad) {
         this.nombreUsuario = nombreUsuario;
         this.correo = correo;
         this.contraseña = contraseña;
         this.deporteFavorito = deporteFavorito;
         this.nivel = nivel;
+        this.localidad = localidad;
     }
 
     // Getters y Setters

@@ -10,8 +10,10 @@ public class ControladorUsuario {
         this.repo = repo;
     }
 
-    public boolean registrarUsuario(String nombre, String correo, String pass, String deporte, Usuario.Nivel nivel) {
-        Usuario nuevo = new Usuario(nombre, correo, pass, deporte, nivel);
+
+    public boolean registrarUsuario(String nombre, String correo, String pass,
+                                    String deporte, Usuario.Nivel nivel, String localidad) {
+        Usuario nuevo = new Usuario(nombre, correo, pass, deporte, nivel, localidad);
         return repo.registrar(nuevo);
     }
 

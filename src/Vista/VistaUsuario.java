@@ -26,14 +26,28 @@ public class VistaUsuario {
         String correo = sc.nextLine();
         System.out.println("Contraseña:");
         String pass = sc.nextLine();
-        System.out.println("Deporte favorito:");
+        System.out.println("Deporte favorito (opcional):");
         String deporte = sc.nextLine();
-        System.out.println("Nivel (PRINCIPIANTE/INTERMEDIO/AVANZADO):");
-        Usuario.Nivel nivel = Usuario.Nivel.valueOf(sc.nextLine().toUpperCase());
+        if (deporte.isBlank()) deporte = null;
 
-        boolean ok = controlador.registrarUsuario(nombre, correo, pass, deporte, nivel);
+        System.out.println("Nivel (PRINCIPIANTE/INTERMEDIO/AVANZADO) (opcional):");
+        String nivelTexto = sc.nextLine();
+        Usuario.Nivel nivel = null;
+        if (!nivelTexto.isBlank()) {
+            try {
+                nivel = Usuario.Nivel.valueOf(nivelTexto.toUpperCase());
+            } catch (IllegalArgumentException e) {
+                System.out.println("Nivel inválido, se dejará vacío.");
+            }
+        }
+
+        System.out.println("Localidad:");
+        String localidad = sc.nextLine();
+
+        boolean ok = controlador.registrarUsuario(nombre, correo, pass, deporte, nivel, localidad);
         System.out.println(ok ? "Registro exitoso" : "Correo ya registrado");
     }
+
 
     public Usuario login() {
         System.out.println("Correo:");

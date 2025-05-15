@@ -19,14 +19,20 @@ public class ControladorPartido {
         return repo.buscar(deporte, ubicacion);
     }
 
-    public void crearPartido(String deporte, int cantidad, String ubicacion, LocalDateTime fechaHora) {
-        Partido nuevo = new Partido(deporte, cantidad, ubicacion, fechaHora);
+    public void crearPartido(String deporte, int cantidad, String ubicacion, LocalDateTime fechaHora, int duracion) {
+        Partido nuevo = new Partido(deporte, cantidad, ubicacion, fechaHora, duracion);
         repo.agregar(nuevo);
     }
+
 
     public List<Partido> BuscarPartidosAbiertos() {
         return repo.buscarAbiertos(); // necesita nuevo método en el repositorio
     }
+
+    public List<Partido> buscarPartidosNoFinalizados(String deporte, String ubicacion) {
+        return repo.buscarPartidosNoFinalizados(deporte, ubicacion);
+    }
+
 
     public List<Partido> partidosParaConfirmarDe(Usuario usuario) {
     return repo.partidosParaConfirmarDe(usuario);

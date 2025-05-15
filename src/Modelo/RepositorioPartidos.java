@@ -3,6 +3,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import Modelo.Estados.Finalizado;
 import Modelo.Estados.NecesitamosJugadores;
 import Modelo.Estados.PartidoArmado;
 
@@ -32,6 +33,13 @@ public class RepositorioPartidos {
 }
 
 
+    public List<Partido> buscarPartidosNoFinalizados(String deporte, String ubicacion) {
+        return partidos.stream()
+                .filter(p -> ! (p.getEstado() instanceof Finalizado)) // excluye finalizados
+                .filter(p -> p.getDeporte().equalsIgnoreCase(deporte))
+                .filter(p -> p.getUbicacion().equalsIgnoreCase(ubicacion))
+                .collect(Collectors.toList());
+    }
 
     
     public List<Partido> buscarAbiertos() {
