@@ -1,4 +1,5 @@
 package tpo.modelo;
+
 public class Usuario {
     private String nombreUsuario;
     private String correo;

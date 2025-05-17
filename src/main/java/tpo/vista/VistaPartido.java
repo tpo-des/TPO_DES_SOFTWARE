@@ -142,7 +142,8 @@ public class VistaPartido {
                 return;
             }
             Partido elegido = disponibles.get(opcion - 1);
-            elegido.agregarJugador(usuario);
+            String resultado = elegido.agregarJugador(usuario);
+            System.out.println(resultado);
         } catch (NumberFormatException e) {
             System.out.println("Entrada inválida.");
         }
