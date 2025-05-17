@@ -18,6 +18,6 @@ public class NecesitamosJugadores implements EstadoPartido {
             partido.setEstado(new PartidoArmado());
             return "El partido esta Armado!!";
         }
-        return "Faltan " + partido.getFaltantes() + " Jugadores para Armar el Doparti!!";
+        return "Faltan " + partido.getFaltantes() + " Jugadores para Armar el Partido!!";
     }
 }
