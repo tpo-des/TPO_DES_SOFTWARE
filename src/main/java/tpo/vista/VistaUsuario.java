@@ -1,8 +1,8 @@
-package Vista;
+package tpo.vista;
 import java.util.Scanner;
 
-import Controlador.ControladorUsuario;
-import Modelo.Usuario;
+import tpo.controlador.ControladorUsuario;
+import tpo.modelo.Usuario;
 
 public class VistaUsuario {
     private ControladorUsuario controlador;

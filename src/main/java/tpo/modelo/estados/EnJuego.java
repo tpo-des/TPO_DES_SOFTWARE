@@ -1,4 +1,5 @@
-package Modelo.Estados;
+package tpo.modelo.estados;
+
 public class EnJuego implements EstadoPartido {
     @Override
     public String getNombre() {

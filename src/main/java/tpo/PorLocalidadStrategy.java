@@ -1,9 +1,11 @@
+package tpo;
+
 import java.util.List;
 import java.util.stream.Collectors;
 
-import Modelo.Strategy;
-import Modelo.Partido;
-import Modelo.Usuario;
+import tpo.modelo.Strategy;
+import tpo.modelo.Partido;
+import tpo.modelo.Usuario;
 
 public class PorLocalidadStrategy implements Strategy {
 

@@ -1,4 +1,4 @@
-package Modelo;
+package tpo.modelo;
 
 import java.util.List;
 

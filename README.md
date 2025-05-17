@@ -9,7 +9,7 @@ El sistema desarrollado permite gestionar encuentros deportivos (fútbol, básqu
 
 ## 🧱 Arquitectura y Diseño
 
-- Se implementó el patrón arquitectónico **MVC (Modelo-Vista-Controlador)**.
+- Se implementó el patrón arquitectónico **MVC (modelo-vista-controlador)**.
 - Se aplicó el patrón de diseño **Strategy** para el emparejamiento de jugadores (actualmente implementado por **localidad**).
 - La estructura está preparada para incorporar fácilmente más estrategias (nivel, historial, etc.) sin modificar la lógica del sistema.
 
@@ -52,7 +52,7 @@ El sistema incluye un diagrama UML donde se identifican:
 
 | Patrón    | Aplicación                                                                 |
 |-----------|----------------------------------------------------------------------------|
-| MVC       | Separación clara entre Modelo, Vista y Controlador                         |
+| MVC       | Separación clara entre modelo, vista y controlador                         |
 | Strategy  | Emparejamiento flexible de jugadores según criterios (localidad por ahora) |
 | (Listo para más) | La estructura permite fácilmente incorporar State, Observer, etc.   |
 

@@ -1,7 +1,6 @@
-package Controlador;
-import Modelo.RepositorioUsuarios;
-import Modelo.Usuario;
-import Modelo.Usuario.Nivel;
+package tpo.controlador;
+import tpo.modelo.RepositorioUsuarios;
+import tpo.modelo.Usuario;
 
 public class ControladorUsuario {
     private RepositorioUsuarios repo;

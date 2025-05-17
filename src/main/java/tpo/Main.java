@@ -1,10 +1,12 @@
-import Controlador.ControladorPartido;
-import Controlador.ControladorUsuario;
-import Modelo.RepositorioPartidos;
-import Modelo.RepositorioUsuarios;
-import Modelo.Usuario;
-import Vista.VistaPartido;
-import Vista.VistaUsuario;
+package tpo;
+
+import tpo.controlador.ControladorPartido;
+import tpo.controlador.ControladorUsuario;
+import tpo.modelo.RepositorioPartidos;
+import tpo.modelo.RepositorioUsuarios;
+import tpo.modelo.Usuario;
+import tpo.vista.VistaPartido;
+import tpo.vista.VistaUsuario;
 
 import java.util.Scanner;
 

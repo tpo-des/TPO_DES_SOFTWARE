@@ -1,11 +1,11 @@
-package Modelo;
+package tpo.modelo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import Modelo.Estados.Finalizado;
-import Modelo.Estados.NecesitamosJugadores;
-import Modelo.Estados.PartidoArmado;
+import tpo.modelo.estados.Finalizado;
+import tpo.modelo.estados.NecesitamosJugadores;
+import tpo.modelo.estados.PartidoArmado;
 
 public class RepositorioPartidos {
     private List<Partido> partidos = new ArrayList<>();

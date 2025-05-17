@@ -1,8 +1,8 @@
-package Vista;
+package tpo.vista;
 
-import Controlador.ControladorPartido;
-import Modelo.Partido;
-import Modelo.Usuario;
+import tpo.controlador.ControladorPartido;
+import tpo.modelo.Partido;
+import tpo.modelo.Usuario;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;

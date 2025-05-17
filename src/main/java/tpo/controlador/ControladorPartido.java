@@ -1,10 +1,10 @@
-package Controlador;
+package tpo.controlador;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import Modelo.Partido;
-import Modelo.RepositorioPartidos;
-import Modelo.Usuario;
+import tpo.modelo.Partido;
+import tpo.modelo.RepositorioPartidos;
+import tpo.modelo.Usuario;
 
 public class ControladorPartido {
     private RepositorioPartidos repo;
