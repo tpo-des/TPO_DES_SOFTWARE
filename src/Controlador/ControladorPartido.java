@@ -8,12 +8,18 @@ import Modelo.Usuario;
 
 public class ControladorPartido {
     private RepositorioPartidos repo;
-    
+
+
 
 
     public ControladorPartido(RepositorioPartidos repo) {
         this.repo = repo;
     }
+
+    public List<Partido> obtenerPartidosFinalizados() {
+        return repo.obtenerPartidosFinalizados();
+    }
+
 
     public List<Partido> buscarPartidos(String deporte, String ubicacion) {
         return repo.buscar(deporte, ubicacion);

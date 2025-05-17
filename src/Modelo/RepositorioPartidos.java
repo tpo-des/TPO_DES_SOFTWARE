@@ -32,6 +32,13 @@ public class RepositorioPartidos {
         .collect(Collectors.toList());
 }
 
+    public List<Partido> obtenerPartidosFinalizados() {
+        return partidos.stream()
+                .filter(p -> p.getEstado() instanceof Finalizado)
+                .collect(Collectors.toList());
+    }
+
+
 
     public List<Partido> buscarPartidosNoFinalizados(String deporte, String ubicacion) {
         return partidos.stream()

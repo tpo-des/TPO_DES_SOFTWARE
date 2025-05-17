@@ -12,14 +12,7 @@ public class VistaUsuario {
         this.controlador = controlador;
     }
 
-    public void mostrarMenu() {
-        System.out.println("1. Registrarse\n2. Iniciar sesión");
-        String opcion = sc.nextLine();
-        if (opcion.equals("1")) registrar();
-        else if (opcion.equals("2")) login();
-    }
-
-    private void registrar() {
+    public void registrar() {
         System.out.println("Nombre:");
         String nombre = sc.nextLine();
         System.out.println("Correo:");
@@ -47,6 +40,7 @@ public class VistaUsuario {
         boolean ok = controlador.registrarUsuario(nombre, correo, pass, deporte, nivel, localidad);
         System.out.println(ok ? "Registro exitoso" : "Correo ya registrado");
     }
+
 
 
     public Usuario login() {

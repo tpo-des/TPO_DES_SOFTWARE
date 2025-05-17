@@ -54,6 +54,53 @@ public class VistaPartido {
         }
     }
 
+    public void mostrarHistorialPartidos() {
+        List<Partido> finalizados = controlador.obtenerPartidosFinalizados();
+        if (finalizados.isEmpty()) {
+            System.out.println("No hay partidos finalizados aún.");
+            return;
+        }
+
+        System.out.println("Historial de partidos finalizados:");
+        for (int i = 0; i < finalizados.size(); i++) {
+            System.out.println((i + 1) + ". " + finalizados.get(i));
+        }
+
+        System.out.print("Elegí un partido para agregar comentarios o estadísticas (0 para salir): ");
+        int opcion = Integer.parseInt(sc.nextLine());
+        if (opcion < 1 || opcion > finalizados.size()) {
+            System.out.println("Salida del historial.");
+            return;
+        }
+
+        Partido seleccionado = finalizados.get(opcion - 1);
+
+        System.out.println("1. Agregar comentario");
+        System.out.println("2. Agregar estadística");
+        System.out.println("3. Volver");
+        int eleccion = Integer.parseInt(sc.nextLine());
+
+        switch (eleccion) {
+            case 1 -> {
+                System.out.print("Escribí el comentario: ");
+                String comentario = sc.nextLine();
+                seleccionado.agregarComentario(comentario);
+                System.out.println("Comentario agregado.");
+            }
+            case 2 -> {
+                System.out.print("Nombre de la estadística (ej: goles): ");
+                String clave = sc.nextLine();
+                System.out.print("Valor numérico: ");
+                int valor = Integer.parseInt(sc.nextLine());
+                seleccionado.agregarEstadistica(clave, valor);
+                System.out.println("Estadística agregada.");
+            }
+            case 3 -> System.out.println("Volviendo al menú principal.");
+            default -> System.out.println("Opción inválida.");
+        }
+    }
+
+
 
     public void buscarPartidos() {
         System.out.print("Buscar partidos por deporte: ");

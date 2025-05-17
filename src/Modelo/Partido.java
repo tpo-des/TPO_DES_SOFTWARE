@@ -1,7 +1,9 @@
 package Modelo;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import Modelo.Estados.*;
 
@@ -16,6 +18,10 @@ public class Partido {
     private Strategy estrategiaEmparejamiento = new PorLocalidadStrategy(); // por defecto
     private int duracion; // en horas
 
+    private String comentarios = "";
+    private Map<String, Integer> estadisticas = new HashMap<>();
+
+
 
 
     public Partido(String deporte, int cantidadJugadores, String ubicacion, LocalDateTime horario,  int duracion) {
@@ -29,6 +35,26 @@ public class Partido {
         this.duracion = duracion;
 
     }
+
+    public void agregarComentario(String comentario) {
+        if (!comentarios.isEmpty()) {
+            comentarios += "\n";
+        }
+        comentarios += comentario;
+    }
+
+    public String getComentarios() {
+        return comentarios;
+    }
+
+    public void agregarEstadistica(String clave, int valor) {
+        estadisticas.put(clave, valor);
+    }
+
+    public Map<String, Integer> getEstadisticas() {
+        return estadisticas;
+    }
+
 
 
     public void setEstrategiaEmparejamiento(Strategy estrategia) {

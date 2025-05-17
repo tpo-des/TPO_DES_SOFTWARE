@@ -9,6 +9,7 @@ import Vista.VistaUsuario;
 import java.util.Scanner;
 
 public class Main {
+
     public static void main(String[] args) {
         // Repositorios
         RepositorioUsuarios repoUsuarios = new RepositorioUsuarios();
@@ -38,9 +39,9 @@ public class Main {
                 String opcion = sc.nextLine();
 
                 switch (opcion) {
-                    case "1" -> vistaUsuario.mostrarMenu(); // registrar
+                    case "1" -> vistaUsuario.registrar();
                     case "2" -> {
-                        usuarioActual = vistaUsuario.login(); // este devuelve Usuario
+                        usuarioActual = vistaUsuario.login();
                         if (usuarioActual != null) {
                             System.out.println("✔ Sesión iniciada como: " + usuarioActual.getNombreUsuario());
                         }
@@ -60,6 +61,7 @@ public class Main {
                 System.out.println("3. Unirse a un partido");
                 System.out.println("4. Confirmar participación");
                 System.out.println("5. Cerrar sesión");
+                System.out.println("6. Ver historial de partidos finalizados");
 
                 String opcion = sc.nextLine();
 
@@ -72,6 +74,7 @@ public class Main {
                         System.out.println("Sesión cerrada.");
                         usuarioActual = null;
                     }
+                    case "6" -> vistaPartido.mostrarHistorialPartidos();
                     default -> System.out.println("❌ Opción inválida");
                 }
             }
