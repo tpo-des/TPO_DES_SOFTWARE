@@ -23,8 +23,6 @@ public class Partido {
     private Map<String, Integer> estadisticas = new HashMap<>();
 
 
-
-
     public Partido(String deporte, int cantidadJugadores, String ubicacion, LocalDateTime horario,  int duracion) {
         this.deporte = deporte;
         this.cantidadJugadores = cantidadJugadores;
@@ -95,16 +93,8 @@ public class Partido {
 
 
 
-    public void agregarJugador(Usuario u) {
-        if (jugadores.size() < cantidadJugadores) {
-            jugadores.add(u);
-            System.out.println("Jugador agregado: " + u.getNombreUsuario());
-            if (jugadores.size() == cantidadJugadores) {
-                transicionar();
-            }
-        } else {
-            System.out.println("El partido ya está completo.");
-        }
+    public String agregarJugador(Usuario usuario) {
+        return estado.agregarJugador(this, usuario);
     }
 
     public void transicionar() {
@@ -135,7 +125,7 @@ public class Partido {
         }
     }
 
-    private void setEstado(EstadoPartido nuevoEstado) {
+    public void setEstado(EstadoPartido nuevoEstado) {
         this.estado = nuevoEstado;
     }
 
