@@ -51,7 +51,7 @@ class NecesitamosJugadoresTest {
         // agrego otro jugador
         String resultadoAgregarOtroJugador = unPartidoDe2Jugador.agregarJugador(otroJugador);
 
-        // valido que el partido no cambio de estado
+        // valido que el partido cambio de estado
         assertEquals("El partido esta Armado!!", resultadoAgregarOtroJugador);
         assertInstanceOf(PartidoArmado.class, unPartidoDe2Jugador.getEstado());
     }
