@@ -18,7 +18,7 @@ public class Partido {
     private List<Usuario> jugadoresConfirmados = new ArrayList<>();
     private Strategy estrategiaEmparejamiento = new PorLocalidadStrategy(); // por defecto
     private int duracion; // en horas
-
+    private Usuario.Nivel nivelMinimoRequerido = Usuario.Nivel.PRINCIPIANTE;
     private String comentarios = "";
     private Map<String, Integer> estadisticas = new HashMap<>();
 
@@ -184,5 +184,13 @@ public class Partido {
 
     public void setJugadoresConfirmados(List<Usuario> jugadoresConfirmados) {
         this.jugadoresConfirmados = jugadoresConfirmados;
+    }
+
+    public Usuario.Nivel getNivelMinimoRequerido() {
+        return nivelMinimoRequerido;
+    }
+
+    public void setNivelMinimoRequerido(Usuario.Nivel nivelMinimoRequerido) {
+        this.nivelMinimoRequerido = nivelMinimoRequerido;
     }
 }
