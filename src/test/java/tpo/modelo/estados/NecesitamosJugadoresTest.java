@@ -45,7 +45,7 @@ class NecesitamosJugadoresTest {
         String resultadoDeAgregarUnJugador = unPartidoDe2Jugador.agregarJugador(unJugador);
 
         // valido que el partido cambio la cantidad de jugadores
-        assertEquals("Faltan 1 Jugadores para Armar el Doparti!!", resultadoDeAgregarUnJugador);
+        assertEquals("Faltan 1 Jugadores para Armar el Partido!!", resultadoDeAgregarUnJugador);
         assertInstanceOf(NecesitamosJugadores.class, unPartidoDe2Jugador.getEstado());
 
         // agrego otro jugador
