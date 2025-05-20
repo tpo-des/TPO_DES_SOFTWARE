@@ -30,7 +30,7 @@ public class ControladorPartido {
         List<EstrategiaDeSelecionDePartidos> estrategias = List.of(
                 new PorDeporteEstrategia(deporte),
                 new PorLocalidadDelPartidoEstrategia(ubicacion),
-                new PartidosNecesitadosDeJugadoresEstrategia()
+                new PartidosNecesitamosDeJugadoresEstrategia()
         );
         return buscarPor(new PorMultiplesEstrategias(estrategias));
     }
@@ -42,7 +42,7 @@ public class ControladorPartido {
 
 
     public List<Partido> BuscarPartidosAbiertos() {
-        return buscarPor(new PartidosNecesitadosDeJugadoresEstrategia());
+        return buscarPor(new PartidosNecesitamosDeJugadoresEstrategia());
     }
 
     public List<Partido> buscarPartidosNoFinalizados(String deporte, String ubicacion) {
