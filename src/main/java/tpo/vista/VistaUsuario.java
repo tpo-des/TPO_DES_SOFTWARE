@@ -22,8 +22,8 @@ public class VistaUsuario {
         System.out.println("Deporte favorito (opcional):");
         String deporte = sc.nextLine();
         System.out.println("Deportes que jugas (opcional):");
-        String deportes = sc.nextLine();
-        if (deporte.isBlank()) deporte = null;
+        
+        
 
 
         System.out.println("Nivel (PRINCIPIANTE/INTERMEDIO/AVANZADO) (opcional):");
