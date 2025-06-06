@@ -1,5 +1,6 @@
 package tpo.modelo;
 
+import java.nio.file.attribute.UserPrincipal;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -21,6 +22,8 @@ public class Partido {
     private Usuario.Nivel nivelMinimoRequerido = Usuario.Nivel.PRINCIPIANTE;
     private String comentarios = "";
     private Map<String, Integer> estadisticas = new HashMap<>();
+    private List<Observador> observadores = new ArrayList<>();
+
 
 
     public Partido(String deporte, int cantidadJugadores, String ubicacion, LocalDateTime horario,  int duracion) {
@@ -35,6 +38,87 @@ public class Partido {
 
     }
 
+
+    //=================================         =
+    //=================================         =
+    //=================================         =
+    //=================================         =
+    //=================================         =
+    //=================================         =
+    //=================================         =
+    //=================================         =
+    //=================================    ===========
+//Nuevos metodo
+
+
+    public Partido crearPartido() {
+    this.estado = new NecesitamosJugadores();
+    notificarObservadores();
+    return this;
+}
+
+public void finalizar() {
+    this.estado = new Finalizado();
+    notificarObservadores();
+}
+
+public void cancelar() {
+    this.estado = new Cancelado();
+    notificarObservadores();
+}
+
+public void comenzar() {
+    this.estado = new EnJuego();
+    notificarObservadores();
+}
+
+public void iniciarPartido() {
+    if (jugadoresConfirmados.size() >= cantidadJugadores) {
+        this.estado = new Confirmado();
+        notificarObservadores();
+    } else {
+        System.out.println("❌ No hay suficientes jugadores para iniciar el partido.");
+    }
+}
+
+public void unirseAPartido(Usuario usuario) {
+    if (!jugadores.contains(usuario)) {
+        jugadores.add(usuario);
+        if (jugadores.size() >= cantidadJugadores) {
+            this.estado = new PartidoArmado();
+            notificarObservadores();
+        }
+    } else {
+        System.out.println("⚠️ El usuario ya está en el partido.");
+    }
+}
+
+    public List<Partido> buscarPartido(){}
+
+
+    public void agregarObservador(Observador o) {
+        observadores.add(o);
+    }
+
+    public void eliminarObservador(Observador o) {
+        observadores.remove(o);
+    }
+
+    private void notificarObservadores() {
+        for (Observador o : observadores) {
+            o.actualizar(this);
+        }
+    }
+    //=================================         =
+    //=================================         =
+    //=================================         =
+    //=================================         =
+    //=================================         =
+    //=================================         =
+    //=================================         =
+    //=================================         =
+    //=================================    ===========
+    
     public void agregarComentario(String comentario) {
         if (!comentarios.isEmpty()) {
             comentarios += "\n";
@@ -126,12 +210,16 @@ public class Partido {
     }
 
     public void setEstado(EstadoPartido nuevoEstado) {
-        this.estado = nuevoEstado;
-    }
+    this.estado = nuevoEstado;
+    notificarObservadores(); // Aquí es donde se aplica Observer
+}
+
 
     public EstadoPartido getEstado() {
         return estado;
     }
+
+    
 
     public String getDeporte() { return deporte; }
 
@@ -192,5 +280,40 @@ public class Partido {
 
     public void setNivelMinimoRequerido(Usuario.Nivel nivelMinimoRequerido) {
         this.nivelMinimoRequerido = nivelMinimoRequerido;
+    }
+
+
+    public Strategy getEstrategiaEmparejamiento() {
+        return estrategiaEmparejamiento;
+    }
+
+
+    public int getDuracion() {
+        return duracion;
+    }
+
+
+    public void setDuracion(int duracion) {
+        this.duracion = duracion;
+    }
+
+
+    public void setComentarios(String comentarios) {
+        this.comentarios = comentarios;
+    }
+
+
+    public void setEstadisticas(Map<String, Integer> estadisticas) {
+        this.estadisticas = estadisticas;
+    }
+
+
+    public List<Observador> getObservadores() {
+        return observadores;
+    }
+
+
+    public void setObservadores(List<Observador> observadores) {
+        this.observadores = observadores;
     }
 }

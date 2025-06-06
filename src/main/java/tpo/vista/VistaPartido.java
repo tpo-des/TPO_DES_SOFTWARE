@@ -73,6 +73,7 @@ public class VistaPartido {
             return;
         }
 
+
         Partido seleccionado = finalizados.get(opcion - 1);
 
         System.out.println("1. Agregar comentario");

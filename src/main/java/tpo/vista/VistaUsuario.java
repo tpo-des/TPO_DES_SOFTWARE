@@ -21,7 +21,10 @@ public class VistaUsuario {
         String pass = sc.nextLine();
         System.out.println("Deporte favorito (opcional):");
         String deporte = sc.nextLine();
+        System.out.println("Deportes que jugas (opcional):");
+        String deportes = sc.nextLine();
         if (deporte.isBlank()) deporte = null;
+
 
         System.out.println("Nivel (PRINCIPIANTE/INTERMEDIO/AVANZADO) (opcional):");
         String nivelTexto = sc.nextLine();
@@ -37,7 +40,7 @@ public class VistaUsuario {
         System.out.println("Localidad:");
         String localidad = sc.nextLine();
 
-        boolean ok = controlador.registrarUsuario(nombre, correo, pass, deporte, nivel, localidad);
+        boolean ok = controlador.registrarUsuario(nombre, correo, pass, deporte, nivel, localidad, deportes);
         System.out.println(ok ? "Registro exitoso" : "Correo ya registrado");
     }
 
