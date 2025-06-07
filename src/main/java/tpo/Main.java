@@ -12,7 +12,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         // Repositorios
         RepositorioUsuarios repoUsuarios = new RepositorioUsuarios();
         RepositorioPartidos repoPartidos = new RepositorioPartidos();
@@ -81,5 +81,5 @@ public class Main {
                 }
             }
         }
-    }
+    }*/
 }

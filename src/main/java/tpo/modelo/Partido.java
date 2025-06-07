@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import tpo.modelo.estados.*;
 
@@ -23,6 +24,7 @@ public class Partido {
     private String comentarios = "";
     private Map<String, Integer> estadisticas = new HashMap<>();
     private List<Observador> observadores = new ArrayList<>();
+
 
 
 
@@ -93,7 +95,9 @@ public void unirseAPartido(Usuario usuario) {
     }
 }
 
-    public List<Partido> buscarPartido(){}
+    public static List<Partido> buscarPartido(String deporte, String ubicacion) {
+        return RepositorioPartidos.getInstance().buscarPorDeporteYUbicacion(deporte, ubicacion);
+    }
 
 
     public void agregarObservador(Observador o) {
@@ -109,6 +113,7 @@ public void unirseAPartido(Usuario usuario) {
             o.actualizar(this);
         }
     }
+    
     //=================================         =
     //=================================         =
     //=================================         =
