@@ -1,14 +1,18 @@
 package tpo.modelo.estados;
 
 import org.junit.jupiter.api.Test;
+import java.time.LocalDateTime;
+import java.util.List;
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertInstanceOf;
+
 import tpo.modelo.Partido;
 import tpo.modelo.Usuario;
+import tpo.modelo.estados.NecesitamosJugadores;
+import tpo.modelo.estados.PartidoArmado;
 
-import java.time.LocalDateTime;
 
-import static org.junit.jupiter.api.Assertions.*;
-
-class NecesitamosJugadoresTest {
+public class NecesitamosJugadoresTest {
 
     @Test
     void unPartidoNecesitamosJugadoresPuedeAgregarMasJugadoresTest() {
@@ -24,35 +28,31 @@ class NecesitamosJugadoresTest {
                 "Juan",
                 "juan@juan.com",
                 "flalsgha",
-                "tu vieja",
+                "fútbol",
                 Usuario.Nivel.PRINCIPIANTE,
-                "caba"
+                "caba",
+                List.of() // deportes
         );
 
         Usuario otroJugador = new Usuario(
                 "Juan2",
                 "juan2@juan.com",
                 "flalsgha",
-                "tu vieja",
+                "fútbol",
                 Usuario.Nivel.PRINCIPIANTE,
-                "caba"
+                "caba",
+                List.of() // deportes
         );
 
-        // valido que el partido esta en estado de que necesita jugadores
         assertInstanceOf(NecesitamosJugadores.class, unPartidoDe2Jugador.getEstado());
 
-        // agrego jugador
         String resultadoDeAgregarUnJugador = unPartidoDe2Jugador.agregarJugador(unJugador);
-
-        // valido que el partido cambio la cantidad de jugadores
         assertEquals("Faltan 1 Jugadores para Armar el Partido!!", resultadoDeAgregarUnJugador);
         assertInstanceOf(NecesitamosJugadores.class, unPartidoDe2Jugador.getEstado());
 
-        // agrego otro jugador
         String resultadoAgregarOtroJugador = unPartidoDe2Jugador.agregarJugador(otroJugador);
-
-        // valido que el partido cambio de estado
         assertEquals("El partido esta Armado!!", resultadoAgregarOtroJugador);
         assertInstanceOf(PartidoArmado.class, unPartidoDe2Jugador.getEstado());
     }
+
 }
