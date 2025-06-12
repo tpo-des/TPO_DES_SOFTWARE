@@ -6,6 +6,10 @@ public class Deporte {
     
     
     
+    public Deporte(String nombre, int jugadoresMin) {
+        this.nombre = nombre;
+        this.jugadoresMin = jugadoresMin;
+    }
     public String getNombre() {
         return nombre;
     }

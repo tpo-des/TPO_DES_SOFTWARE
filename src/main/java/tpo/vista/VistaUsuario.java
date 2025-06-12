@@ -1,7 +1,10 @@
 package tpo.vista;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 import tpo.controlador.ControladorUsuario;
+import tpo.modelo.Deporte;
 import tpo.modelo.Usuario;
 
 public class VistaUsuario {
@@ -22,6 +25,12 @@ public class VistaUsuario {
         System.out.println("Deporte favorito (opcional):");
         String deporte = sc.nextLine();
         System.out.println("Deportes que jugas (opcional):");
+        
+        
+        List<Deporte> deportes = new ArrayList<>();
+        deportes.add(new Deporte("Fútbol", 11)); // podés agregar los que correspondan
+        deportes.add(new Deporte("Básquet", 9));
+
         
         
 
