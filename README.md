@@ -12,7 +12,7 @@ El sistema desarrollado permite gestionar encuentros deportivos (fútbol, básqu
 - Se implementó el patrón arquitectónico **MVC (modelo-vista-controlador)**.
 - Se aplicó el patrón de diseño **Strategy** para el emparejamiento de jugadores (actualmente implementado por **localidad**).
 - La estructura está preparada para incorporar fácilmente más estrategias (nivel, historial, etc.) sin modificar la lógica del sistema.
-
+...
 ---
 
 ## ✅ Funcionalidades implementadas
