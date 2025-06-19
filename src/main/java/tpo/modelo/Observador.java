@@ -2,6 +2,6 @@ package tpo.modelo;
 
 public interface Observador {
     
-    void actualizar(Partido partido);
+    void actualizar(Observable observable);
 
 }

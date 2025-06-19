@@ -2,8 +2,22 @@ package tpo.modelo;
 
 import java.util.Observer;
 
-public interface Observable{
-    void agregarObservador(Observer o);
-    void eliminarObservador(Observer o);
-    void notificarObservador(Observer o);
+public class Observable{
+    List<Observador> observadores = new ArrayList<>(); 
+    
+    
+    void agregarObservador(Observer o)
+    {
+        observadores.add(o);
+    }
+
+    void eliminarObservador(Observer o){
+        observadores.remove(o);
+    }
+    
+    void notificarObservador(){
+        for(Observador o : observadores) {
+            o.actualizar(this);
+        }
+    };
 }

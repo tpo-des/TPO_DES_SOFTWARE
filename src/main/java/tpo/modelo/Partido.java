@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 
 import tpo.modelo.estados.*;
 
-public class Partido {
+public class Partido extends Observable{
     private String deporte;
     private int cantidadJugadores;
     private String ubicacion;
@@ -24,6 +24,9 @@ public class Partido {
     private String comentarios = "";
     private Map<String, Integer> estadisticas = new HashMap<>();
     private List<Observador> observadores = new ArrayList<>();
+
+    private Deporte deporte;
+    private int cantidadJugadores;
 
 
 
@@ -108,10 +111,7 @@ public void unirseAPartido(Usuario usuario) {
         observadores.remove(o);
     }
 
-    private void notificarObservadores() {
-        for (Observador o : observadores) {
-            o.actualizar(this);
-        }
+    
     }
 
     //=================================         =
