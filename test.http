@@ -1,0 +1,34 @@
+
+#### Usuarios API
+
+GET http://localhost:8080/usuarios
+
+###
+POST http://localhost:8080/usuarios
+Content-Type: application/json
+
+{
+     "nombreUsuario": "Alan Turing",
+     "email": "alan.turing@gmail.com",
+     "password": "password123"
+}
+
+###
+GET http://localhost:8080/usuarios/1
+
+#### Partidos API
+
+GET http://localhost:8080/partidos
+
+###
+POST http://localhost:8080/partidos
+Content-Type: application/json
+
+{
+  "cantidadDeJugadores": 10
+}
+
+###
+GET http://localhost:8080/partidos/1
+
+###
