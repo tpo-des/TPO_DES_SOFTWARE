@@ -1,18 +1,15 @@
 package tpo.jugar.controller;
 
-import org.springframework.web.bind.annotation.DeleteMapping;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
 import tpo.jugar.dto.UsuarioDto;
+import tpo.jugar.model.usuario.Usuario;
 import tpo.jugar.service.UsuarioService;
 
 import java.util.List;
 
 @RestController
+@RequestMapping("/api/v1/usuarios")
 class UsuarioController {
 
     private final UsuarioService service;
@@ -21,28 +18,37 @@ class UsuarioController {
         this.service = service;
     }
 
-    @GetMapping("/usuarios")
-    List<UsuarioDto> all() {
-        return service.findAll();
+    @GetMapping
+    ResponseEntity<List<UsuarioDto>> all() {
+        return ResponseEntity.ok(
+                service.findAll()
+                        .stream()
+                        .map(UsuarioController::toDto)
+                        .toList()
+        );
     }
 
-    @PostMapping("/usuarios")
-    UsuarioDto newUsuario(@RequestBody UsuarioDto usuarioDto) {
-        return service.create(usuarioDto);
+    @PostMapping
+    ResponseEntity<UsuarioDto> create(@RequestBody UsuarioDto usuarioDto) {
+        Usuario usuario = new Usuario(
+                usuarioDto.getNombreUsuario(),
+                usuarioDto.getEmail(),
+                usuarioDto.getPassword()
+        );
+        return ResponseEntity.ok(toDto(service.create(usuario)));
     }
 
-    @GetMapping("/usuarios/{id}")
-    UsuarioDto one(@PathVariable Long id) {
-        return service.findById(id);
+    @GetMapping("/{id}")
+    ResponseEntity<UsuarioDto> getById(@PathVariable Long id) {
+        return ResponseEntity.ok(toDto(service.getById(id)));
     }
 
-    @PutMapping("/usuarios/{id}")
-    UsuarioDto replaceUsuario(@RequestBody UsuarioDto usuarioDto, @PathVariable Long id) {
-        return service.update(id, usuarioDto);
-    }
-
-    @DeleteMapping("/usuarios/{id}")
-    UsuarioDto deleteUsuario(@PathVariable Long id) {
-        return service.delete(id);
+    private static UsuarioDto toDto(Usuario usuario) {
+        return new UsuarioDto(
+                usuario.getId(),
+                usuario.getNombreUsuario(),
+                usuario.getEmail(),
+                usuario.getPassword()
+        );
     }
 }

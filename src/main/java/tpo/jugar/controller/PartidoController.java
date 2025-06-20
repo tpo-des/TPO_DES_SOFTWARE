@@ -1,13 +1,16 @@
 package tpo.jugar.controller;
 
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tpo.jugar.dto.PartidoDto;
-import tpo.jugar.dto.UsuarioDto;
+import tpo.jugar.model.partido.Partido;
 import tpo.jugar.service.PartidoService;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
+@RequestMapping("/api/v1/partidos")
 public class PartidoController {
 
     private final PartidoService service;
@@ -16,28 +19,45 @@ public class PartidoController {
         this.service = service;
     }
 
-    @GetMapping("/partidos")
-    List<PartidoDto> all() {
-        return service.findAll();
+    @GetMapping
+    ResponseEntity<List<PartidoDto>> all() {
+        return ResponseEntity.ok(
+                service.findAll().stream()
+                        .map(PartidoController::toDto)
+                        .collect(Collectors.toList())
+        );
     }
 
-    @PostMapping("/partidos")
-    PartidoDto newUsuario(@RequestBody PartidoDto partidoDto) {
-        return service.create(partidoDto);
+    @PostMapping
+    ResponseEntity<PartidoDto> create(@RequestBody PartidoDto partidoDto) {
+        Partido partido = new Partido(
+                partidoDto.getCantidadDeJugadores()
+        );
+        return ResponseEntity.ok(toDto(service.create(partido)));
     }
 
-    @GetMapping("/partidos/{id}")
-    PartidoDto one(@PathVariable Long id) {
-        return service.findById(id);
+    @GetMapping("/{id}")
+    ResponseEntity<PartidoDto> getById(@PathVariable Long id) {
+        return ResponseEntity.ok(toDto(service.getById(id)));
     }
 
-    @PutMapping("/partidos/{id}")
-    PartidoDto replaceUsuario(@RequestBody PartidoDto partidoDto, @PathVariable Long id) {
-        return service.update(id, partidoDto);
+    @PutMapping("/{id}/finalizar")
+    ResponseEntity<PartidoDto> finalizar(@PathVariable Long id) {
+        Partido partido = service.finalizar(id);
+        return ResponseEntity.ok(toDto(partido));
     }
 
-    @DeleteMapping("/partidos/{id}")
-    PartidoDto deleteUsuario(@PathVariable Long id) {
-        return service.delete(id);
+    @PutMapping("/{id}/cancelar")
+    ResponseEntity<PartidoDto> cancelar(@PathVariable Long id) {
+        Partido partido = service.cancelar(id);
+        return ResponseEntity.ok(toDto(partido));
+    }
+
+    private static PartidoDto toDto(Partido partido) {
+        return new PartidoDto(
+                partido.getId(),
+                partido.getEstado(),
+                partido.getCantidadDeJugadores()
+        );
     }
 }

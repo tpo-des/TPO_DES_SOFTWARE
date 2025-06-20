@@ -1,10 +1,10 @@
 
 #### Usuarios API
 
-GET http://localhost:8080/usuarios
+GET http://localhost:8080/api/v1/usuarios
 
 ###
-POST http://localhost:8080/usuarios
+POST http://localhost:8080/api/v1/usuarios
 Content-Type: application/json
 
 {
@@ -14,14 +14,14 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/usuarios/1
+GET http://localhost:8080/api/v1/usuarios/1
 
 #### Partidos API
 
-GET http://localhost:8080/partidos
+GET http://localhost:8080/api/v1/partidos
 
 ###
-POST http://localhost:8080/partidos
+POST http://localhost:8080/api/v1/partidos
 Content-Type: application/json
 
 {
@@ -29,6 +29,13 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/partidos/1
+GET http://localhost:8080/api/v1/partidos/1
 
 ###
+
+PUT http://localhost:8080/api/v1/partidos/1/cancelar
+Content-Type: application/json
+
+{
+
+}
