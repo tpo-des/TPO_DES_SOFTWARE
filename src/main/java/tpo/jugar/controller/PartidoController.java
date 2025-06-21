@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.*;
 import tpo.jugar.dto.JugadorDto;
 import tpo.jugar.dto.PartidoDto;
 import tpo.jugar.mapper.PartidoMapper;
+import tpo.jugar.model.deporte.Deporte;
 import tpo.jugar.model.jugador.Jugador;
 import tpo.jugar.model.partido.Partido;
 import tpo.jugar.service.PartidoService;
@@ -33,9 +34,14 @@ public class PartidoController {
 
     @PostMapping
     ResponseEntity<PartidoDto> create(@RequestBody PartidoDto partidoDto) {
+        Deporte deporte = new Deporte();
+        deporte.setId(partidoDto.getDeporte().getId());
         Partido partido = new Partido(
                 partidoDto.getCantidadDeJugadores(),
-                partidoDto.getUbicacion()
+                partidoDto.getUbicacion(),
+                partidoDto.getDuracionEnMinutos(),
+                partidoDto.getFechaComienzo(),
+                deporte
         );
         return ResponseEntity.ok(PartidoMapper.toDto(service.create(partido)));
     }

@@ -7,10 +7,13 @@ public class PartidoMapper {
 
     public static PartidoDto toDto(Partido partido) {
         return new PartidoDto(
-                partido.getId(),
-                partido.getEstado(),
-                partido.getCantidadDeJugadores(),
-                partido.getUbicacion()
+            partido.getId(),
+            partido.getEstado(),
+            partido.getCantidadDeJugadores(),
+            partido.getUbicacion(),
+            partido.getDuracionEnMinutos(),
+            partido.getFechaComienzo(),
+            DeporteMapper.toDto(partido.getDeporte())
         );
     }
 }

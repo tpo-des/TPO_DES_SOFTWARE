@@ -1,0 +1,19 @@
+spring:
+    application:
+        name: jugar
+
+    datasource:
+        url: jdbc:mysql://localhost:3306/tpo
+        username: myuser
+        password: secret
+        driver-class-name: com.mysql.cj.jdbc.Driver
+
+    jpa:
+        hibernate:
+            ddl-auto: update
+        show-sql: true
+
+    jackson:
+        default-property-inclusion: NON_NULL
+
+debug: true

@@ -1,4 +1,4 @@
-package tpo.jugar.model.entity;
+package tpo.jugar.model.deporte;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -13,11 +13,7 @@ public class Deporte {
     private Long id;
     private String nombre;
 
-    protected Deporte() {}
-
-    public Deporte(String nombre) {
-        this.nombre = nombre;
-    }
+    public Deporte() {}
 
     public String getNombre() {
         return nombre;

@@ -22,6 +22,18 @@ GET http://localhost:8080/api/v1/usuarios/1/partidos
 
 ###
 
+### Deportes API
+
+GET http://localhost:8080/api/v1/deportes
+
+###
+POST http://localhost:8080/api/v1/deportes
+Content-Type: application/json
+
+{
+    "nombre": "Fútbol 5"
+}
+
 
 #### Partidos API
 
@@ -32,16 +44,21 @@ POST http://localhost:8080/api/v1/partidos
 Content-Type: application/json
 
 {
-  "cantidadDeJugadores": 10,
-  "ubicacion": "En el patio"
+    "cantidadDeJugadores": 10,
+    "ubicacion": "En el patio",
+    "duracionEnMinutos": 90,
+    "fechaComienzo": "2023-10-01T15:00:00",
+    "deporte": {
+        "id": 252
+    }
 }
 
 ###
-GET http://localhost:8080/api/v1/partidos/2
+GET http://localhost:8080/api/v1/partidos/102
 
 ###
 
-PUT http://localhost:8080/api/v1/partidos/1/cancelar
+PUT http://localhost:8080/api/v1/partidos/2/cancelar
 Content-Type: application/json
 
 {
@@ -49,7 +66,7 @@ Content-Type: application/json
 }
 
 ###
-GET http://localhost:8080/api/v1/partidos/1/jugadores
+GET http://localhost:8080/api/v1/partidos/2/jugadores
 
 ###
 

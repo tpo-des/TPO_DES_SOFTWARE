@@ -1,10 +1,13 @@
 package tpo.jugar.model.partido;
 
 import jakarta.persistence.*;
+import tpo.jugar.model.deporte.Deporte;
 import tpo.jugar.model.jugador.Jugador;
 import tpo.jugar.model.partido.estado.TipoEstadoPartido;
 import tpo.jugar.model.usuario.Usuario;
 
+import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -18,6 +21,12 @@ public class Partido {
     private TipoEstadoPartido estado;
     private Integer cantidadDeJugadores;
     private String ubicacion;
+    private Long duracionEnMinutos;
+    private LocalDateTime fechaComienzo;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "deporte_id")
+    private Deporte deporte;
 
     @OneToMany(
             mappedBy = "partido",
@@ -28,10 +37,13 @@ public class Partido {
 
     protected Partido() {}
 
-    public Partido(Integer cantidadDeJugadores, String ubicacion) {
-        this.estado = TipoEstadoPartido.NECESITAMOS_JUGADORES;
+    public Partido(Integer cantidadDeJugadores, String ubicacion, Long duracionEnMinutos, LocalDateTime fechaComienzo, Deporte deporte) {
         this.cantidadDeJugadores = cantidadDeJugadores;
         this.ubicacion = ubicacion;
+        this.duracionEnMinutos = duracionEnMinutos;
+        this.fechaComienzo = fechaComienzo;
+        this.deporte = deporte;
+        this.estado = TipoEstadoPartido.NECESITAMOS_JUGADORES;
         this.jugadores = new ArrayList<>();
     }
 
@@ -73,6 +85,30 @@ public class Partido {
 
     public void setJugadores(List<Jugador> jugadores) {
         this.jugadores = jugadores;
+    }
+
+    public Long getDuracionEnMinutos() {
+        return duracionEnMinutos;
+    }
+
+    public void setDuracionEnMinutos(Long duracionEnMinutos) {
+        this.duracionEnMinutos = duracionEnMinutos;
+    }
+
+    public LocalDateTime getFechaComienzo() {
+        return fechaComienzo;
+    }
+
+    public void setFechaComienzo(LocalDateTime fechaComienzo) {
+        this.fechaComienzo = fechaComienzo;
+    }
+
+    public Deporte getDeporte() {
+        return deporte;
+    }
+
+    public void setDeporte(Deporte deporte) {
+        this.deporte = deporte;
     }
 
     public void addJugador(Jugador jugador) {

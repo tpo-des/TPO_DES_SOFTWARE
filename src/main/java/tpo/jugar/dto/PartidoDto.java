@@ -2,17 +2,25 @@ package tpo.jugar.dto;
 
 import tpo.jugar.model.partido.estado.TipoEstadoPartido;
 
+import java.time.LocalDateTime;
+
 public class PartidoDto {
     private Long id;
     private TipoEstadoPartido estado;
     private Integer cantidadDeJugadores;
     private String ubicacion;
+    private Long duracionEnMinutos;
+    private LocalDateTime fechaComienzo;
+    private DeporteDto deporte;
 
-    public PartidoDto(Long id, TipoEstadoPartido estado, Integer cantidadDeJugadores, String ubicacion) {
+    public PartidoDto(Long id, TipoEstadoPartido estado, Integer cantidadDeJugadores, String ubicacion, Long duracionEnMinutos, LocalDateTime fechaComienzo, DeporteDto deporte) {
         this.id = id;
         this.estado = estado;
         this.cantidadDeJugadores = cantidadDeJugadores;
         this.ubicacion = ubicacion;
+        this.duracionEnMinutos = duracionEnMinutos;
+        this.fechaComienzo = fechaComienzo;
+        this.deporte = deporte;
     }
 
     public Long getId() {
@@ -45,5 +53,29 @@ public class PartidoDto {
 
     public void setCantidadDeJugadores(Integer cantidadDeJugadores) {
         this.cantidadDeJugadores = cantidadDeJugadores;
+    }
+
+    public Long getDuracionEnMinutos() {
+        return duracionEnMinutos;
+    }
+
+    public void setDuracionEnMinutos(Long duracionEnMinutos) {
+        this.duracionEnMinutos = duracionEnMinutos;
+    }
+
+    public DeporteDto getDeporte() {
+        return deporte;
+    }
+
+    public void setDeporte(DeporteDto deporte) {
+        this.deporte = deporte;
+    }
+
+    public LocalDateTime getFechaComienzo() {
+        return fechaComienzo;
+    }
+
+    public void setFechaComienzo(LocalDateTime fechaComienzo) {
+        this.fechaComienzo = fechaComienzo;
     }
 }
