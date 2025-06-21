@@ -20,9 +20,9 @@ public class PartidoController {
     }
 
     @GetMapping
-    ResponseEntity<List<PartidoDto>> all() {
+    ResponseEntity<List<PartidoDto>> findBy(@RequestParam String ubicacion) {
         return ResponseEntity.ok(
-                service.findAll().stream()
+                service.findNecesitadosDeJugadoresBy(ubicacion).stream()
                         .map(PartidoController::toDto)
                         .collect(Collectors.toList())
         );
@@ -31,7 +31,8 @@ public class PartidoController {
     @PostMapping
     ResponseEntity<PartidoDto> create(@RequestBody PartidoDto partidoDto) {
         Partido partido = new Partido(
-                partidoDto.getCantidadDeJugadores()
+                partidoDto.getCantidadDeJugadores(),
+                partidoDto.getUbicacion()
         );
         return ResponseEntity.ok(toDto(service.create(partido)));
     }
@@ -57,7 +58,8 @@ public class PartidoController {
         return new PartidoDto(
                 partido.getId(),
                 partido.getEstado(),
-                partido.getCantidadDeJugadores()
+                partido.getCantidadDeJugadores(),
+                partido.getUbicacion()
         );
     }
 }

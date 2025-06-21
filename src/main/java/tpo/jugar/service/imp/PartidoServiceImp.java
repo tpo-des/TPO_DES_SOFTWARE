@@ -3,9 +3,9 @@ package tpo.jugar.service.imp;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
-import tpo.jugar.exception.NotFoundException;
 import tpo.jugar.model.partido.Partido;
 import tpo.jugar.model.partido.estado.ContextoEstadoPartido;
+import tpo.jugar.model.partido.estado.TipoEstadoPartido;
 import tpo.jugar.repository.PartidoRepository;
 import tpo.jugar.service.PartidoService;
 
@@ -25,6 +25,11 @@ public class PartidoServiceImp implements PartidoService {
     @Override
     public List<Partido> findAll() {
         return repository.findAll();
+    }
+
+    @Override
+    public List<Partido> findNecesitadosDeJugadoresBy(String ubicacion) {
+        return repository.findByEstadoAndUbicacion(TipoEstadoPartido.NECESITAMOS_JUGADORES, ubicacion);
     }
 
     @Override

@@ -6,6 +6,7 @@ import java.util.List;
 
 public interface PartidoService {
     List<Partido> findAll();
+    List<Partido> findNecesitadosDeJugadoresBy(String ubicacion);
     Partido getById(long id);
     Partido create(Partido partido);
     Partido finalizar(long id);

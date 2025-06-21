@@ -16,6 +16,7 @@ public class Partido {
 
     private TipoEstadoPartido estado;
     private Integer cantidadDeJugadores;
+    private String ubicacion;
 
     @ManyToMany
     @JoinTable(
@@ -27,9 +28,10 @@ public class Partido {
 
     protected Partido() {}
 
-    public Partido(Integer cantidadDeJugadores) {
+    public Partido(Integer cantidadDeJugadores, String ubicacion) {
         this.estado = TipoEstadoPartido.NECESITAMOS_JUGADORES;
         this.cantidadDeJugadores = cantidadDeJugadores;
+        this.ubicacion = ubicacion;
         this.jugadores = new ArrayList<>();
     }
 
@@ -47,6 +49,14 @@ public class Partido {
 
     public void setEstado(TipoEstadoPartido estado) {
         this.estado = estado;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
     }
 
     public Integer getCantidadDeJugadores() {
