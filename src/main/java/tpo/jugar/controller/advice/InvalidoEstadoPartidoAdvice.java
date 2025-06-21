@@ -5,14 +5,14 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import tpo.jugar.dto.ErrorDto;
-import tpo.jugar.exception.NotFoundException;
+import tpo.jugar.exception.InvalidoEstadoPartidoException;
 
 @RestControllerAdvice
-class NotFoundAdvice {
+class InvalidoEstadoPartidoAdvice {
 
-    @ExceptionHandler(NotFoundException.class)
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    ErrorDto notFoundHandler(NotFoundException ex) {
+    @ExceptionHandler(InvalidoEstadoPartidoException.class)
+    @ResponseStatus(HttpStatus.UNPROCESSABLE_ENTITY)
+    ErrorDto employeeNotFoundHandler(InvalidoEstadoPartidoException ex) {
         return new ErrorDto(ex.getMessage());
     }
 }

@@ -1,9 +1,10 @@
 package tpo.jugar.model.partido.estado;
 
-public enum TipoDeEstadoDePartido {
+public enum TipoEstadoPartido {
     NECESITAMOS_JUGADORES,
     PARTIDO_ARMADO,
     CONFIRMADO,
     EN_JUEGO,
-    FINALIZADO
+    FINALIZADO,
+    CANCELADO
 }

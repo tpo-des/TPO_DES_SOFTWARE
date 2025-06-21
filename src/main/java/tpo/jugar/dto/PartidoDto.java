@@ -1,16 +1,18 @@
 package tpo.jugar.dto;
 
-import tpo.jugar.model.partido.estado.TipoDeEstadoDePartido;
+import tpo.jugar.model.partido.estado.TipoEstadoPartido;
 
 public class PartidoDto {
     private Long id;
-    private TipoDeEstadoDePartido estado;
+    private TipoEstadoPartido estado;
     private Integer cantidadDeJugadores;
+    private String ubicacion;
 
-    public PartidoDto(Long id, TipoDeEstadoDePartido estado, Integer cantidadDeJugadores) {
+    public PartidoDto(Long id, TipoEstadoPartido estado, Integer cantidadDeJugadores, String ubicacion) {
         this.id = id;
         this.estado = estado;
         this.cantidadDeJugadores = cantidadDeJugadores;
+        this.ubicacion = ubicacion;
     }
 
     public Long getId() {
@@ -21,12 +23,20 @@ public class PartidoDto {
         this.id = id;
     }
 
-    public TipoDeEstadoDePartido getEstado() {
+    public TipoEstadoPartido getEstado() {
         return estado;
     }
 
-    public void setEstado(TipoDeEstadoDePartido estado) {
+    public void setEstado(TipoEstadoPartido estado) {
         this.estado = estado;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
     }
 
     public Integer getCantidadDeJugadores() {

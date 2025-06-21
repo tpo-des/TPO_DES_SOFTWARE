@@ -1,7 +1,7 @@
 package tpo.jugar.model.partido;
 
 import jakarta.persistence.*;
-import tpo.jugar.model.partido.estado.TipoDeEstadoDePartido;
+import tpo.jugar.model.partido.estado.TipoEstadoPartido;
 import tpo.jugar.model.usuario.Usuario;
 
 import java.util.ArrayList;
@@ -14,8 +14,9 @@ public class Partido {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private TipoDeEstadoDePartido estado;
+    private TipoEstadoPartido estado;
     private Integer cantidadDeJugadores;
+    private String ubicacion;
 
     @ManyToMany
     @JoinTable(
@@ -27,10 +28,11 @@ public class Partido {
 
     protected Partido() {}
 
-    public Partido(Integer cantidadDeJugadores) {
-        this.estado = TipoDeEstadoDePartido.NECESITAMOS_JUGADORES;
+    public Partido(Integer cantidadDeJugadores, String ubicacion) {
+        this.estado = TipoEstadoPartido.NECESITAMOS_JUGADORES;
         this.cantidadDeJugadores = cantidadDeJugadores;
-//        this.jugadores = new ArrayList<>();
+        this.ubicacion = ubicacion;
+        this.jugadores = new ArrayList<>();
     }
 
     public Long getId() {
@@ -41,12 +43,20 @@ public class Partido {
         this.id = id;
     }
 
-    public TipoDeEstadoDePartido getEstado() {
+    public TipoEstadoPartido getEstado() {
         return estado;
     }
 
-    public void setEstado(TipoDeEstadoDePartido estado) {
+    public void setEstado(TipoEstadoPartido estado) {
         this.estado = estado;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
     }
 
     public Integer getCantidadDeJugadores() {
@@ -57,11 +67,27 @@ public class Partido {
         this.cantidadDeJugadores = cantidadDeJugadores;
     }
 
-//    public List<Usuario> getJugadores() {
-//        return jugadores;
-//    }
-//
-//    public void setJugadores(List<Usuario> jugadores) {
-//        this.jugadores = jugadores;
-//    }
+    public List<Usuario> getJugadores() {
+        return jugadores;
+    }
+
+    public void setJugadores(List<Usuario> jugadores) {
+        this.jugadores = jugadores;
+    }
+
+    public void addJugador(Usuario jugador) {
+        this.jugadores.add(jugador);
+    }
+
+    public void removeJugador(Usuario jugador) {
+        this.jugadores.remove(jugador);
+    }
+
+    public int getFaltantes() {
+        return this.cantidadDeJugadores - this.jugadores.size();
+    }
+
+    public boolean faltanJugadores() {
+        return getFaltantes() > 0;
+    }
 }

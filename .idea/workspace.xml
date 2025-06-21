@@ -4,110 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="423faa01-b53f-4ebd-b274-c826079a7e40" name="Changes" comment="Ejemplo estrategia">
-      <change afterPath="$PROJECT_DIR$/.gradle/8.14.2/checksums/checksums.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/8.14.2/checksums/md5-checksums.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/8.14.2/checksums/sha1-checksums.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileChanges/last-build.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/cache.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gradle/vcs-1/gc.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/classes/java/main/tpo/jugar/JugarApplication.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resolvedMainClassName" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/resources/main/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/JugarApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/controller/GreetingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/controller/PartidoController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/controller/UsuarioController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/controller/advice/NotFoundAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/dto/ErrorDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/dto/PartidoDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/dto/UsuarioDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/exception/NotFoundException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/entity/Deporte.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/Partido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/estado/TipoDeEstadoDePartido.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/usuario/NivelUsuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/usuario/Usuario.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/repository/PartidoRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/repository/UsuarioRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/PartidoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/UsuarioService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/greeting.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/tpo/jugar/JugarApplicationTests.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test.http" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/Main.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/Notification/EmailAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/Notification/FireBaseAdapter.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/Notification/FirebaseService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/Notification/NotificacionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/gc.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/Notification/Notificador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/Notification/ServicioEmail.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/ObservadorDePartidos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/PorLocalidadStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/controlador/ControladorPartido.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/controlador/ControladorUsuario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/Deporte.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/Observable.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/Observador.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/Partido.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/PorLocalidadStrategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/RepositorioPartidos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/RepositorioUsuarios.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/Strategy.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/Usuario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/estados/Cancelado.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/estados/Confirmado.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/estados/EnJuego.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/estados/EstadoPartido.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/estados/Finalizado.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/estados/NecesitamosJugadores.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/estados/PartidoArmado.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/partido/busqueda/BuscadorDePartidos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/partido/busqueda/EstrategiaDeSelecionDePartidos.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/partido/busqueda/PartidosArmadoEstrategia.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/partido/busqueda/PartidosFinalizadosEstrategia.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/partido/busqueda/PartidosNecesitamosDeJugadoresEstrategia.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/partido/busqueda/PartidosNoFinalizadosEstrategia.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/partido/busqueda/PorDeporteEstrategia.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/partido/busqueda/PorLocalidadDelPartidoEstrategia.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/partido/busqueda/PorMismoNivelDeJuegoEstrategia.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/partido/busqueda/PorMismoOMenorNivelDejuegoEstrategia.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/partido/busqueda/PorMultiplesEstrategias.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/modelo/partido/busqueda/UsuarioJuegaEnElPartidoEstrategia.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/vista/VistaPartido.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/vista/VistaUsuario.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tpo/modelo/estados/EnJuegoTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tpo/modelo/estados/NecesitamosJugadoresTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/tpo/modelo/estados/vista/VistaPartidoTest.java" beforeDir="false" />
+    <list default="true" id="423faa01-b53f-4ebd-b274-c826079a7e40" name="Changes" comment="Add state">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/dto/BuscarPartidoDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.14.2/fileHashes/resourceHashesCache.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/controller/PartidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/controller/PartidoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/dto/PartidoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/dto/PartidoDto.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/Partido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/Partido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/repository/PartidoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/repository/PartidoRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/PartidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/PartidoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/imp/PartidoServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/imp/PartidoServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test.http" beforeDir="false" afterPath="$PROJECT_DIR$/test.http" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,9 +35,34 @@
   <component name="ExternalProjectsManager">
     <system id="GRADLE">
       <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
         <projects_view>
           <tree_state>
-            <expand />
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jugar" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jugar" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jugar" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="application" type="c8890929:TasksNode$1" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="jugar" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="build" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
             <select />
           </tree_state>
         </projects_view>
@@ -135,13 +73,13 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="JUnit5 Test Class" />
-        <option value="Interface" />
         <option value="Spring Component" />
         <option value="Kotlin Class" />
         <option value="HTTP Request" />
-        <option value="Class" />
         <option value="Enum" />
         <option value="package-info" />
+        <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -165,10 +103,10 @@
     &quot;accountId&quot;: &quot;4872f166-6f11-40b9-9bb7-9260e3eefcd9&quot;
   }
 }</component>
-  <component name="KubernetesApiPersistence"><![CDATA[{}]]></component>
-  <component name="KubernetesApiProvider"><![CDATA[{
-  "isMigrated": true
-}]]></component>
+  <component name="KubernetesApiPersistence">{}</component>
+  <component name="KubernetesApiProvider">{
+  &quot;isMigrated&quot;: true
+}</component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="DEPENDENCY_CHECKER_PROBLEMS_TAB" />
   </component>
@@ -183,56 +121,57 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Application.Main.executor": "Run",
-    "Downloaded.Files.Path.Enabled": "false",
-    "Gradle.Download Sources.executor": "Run",
-    "HTTP Request.test | #2.executor": "Run",
-    "HTTP Request.test | #3.executor": "Run",
-    "HTTP Request.test | #4.executor": "Run",
-    "HTTP Request.test | #5.executor": "Run",
-    "HTTP Request.test | #6.executor": "Run",
-    "HTTP Request.test | #7.executor": "Run",
-    "HTTP Request.test | Partidos API.executor": "Run",
-    "HTTP Request.test | Usuarios API.executor": "Run",
-    "JUnit.EnJuegoTest.executor": "Run",
-    "JUnit.NecesitamosJugadoresTest.executor": "Run",
-    "JUnit.NecesitamosJugadoresTest.unPartidoNecesitamosJugadoresPuedeAgregarMasJugadoresTest.executor": "Debug",
-    "JUnit.java in tpo-des-software.executor": "Run",
-    "Maven.tpo [clean].executor": "Run",
-    "Maven.tpo [compile].executor": "Run",
-    "Maven.tpo-des-software [clean].executor": "Run",
-    "Maven.tpo-des-software [deploy].executor": "Run",
-    "Maven.tpo-des-software [test].executor": "Run",
-    "Maven.tpo-des-software [validate].executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "SHELLCHECK.PATH": "I do mind",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "feature/spring",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/alan.gagliero/UADE/oop2/TPO_DES_SOFTWARE",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "/Users/alan.gagliero/UADE/oop2/TPO_DES_SOFTWARE/tpo/src/Main.java",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.37586206",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;Gradle.Download Sources.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.TPO_DES_SOFTWARE [clean].executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | #2.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | #3.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | #4.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | #5.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | #6.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | #7.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | Partidos API.executor&quot;: &quot;Run&quot;,
+    &quot;HTTP Request.test | Usuarios API.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.EnJuegoTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NecesitamosJugadoresTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.NecesitamosJugadoresTest.unPartidoNecesitamosJugadoresPuedeAgregarMasJugadoresTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.java in tpo-des-software.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.tpo [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.tpo [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.tpo-des-software [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.tpo-des-software [deploy].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.tpo-des-software [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.tpo-des-software [validate].executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;SHELLCHECK.PATH&quot;: &quot;I do mind&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;feature/spring&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/alan.gagliero/UADE/oop2/TPO_DES_SOFTWARE&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;/Users/alan.gagliero/UADE/oop2/TPO_DES_SOFTWARE/tpo/src/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.37586206&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -249,11 +188,27 @@
       <recent name="tpo.modelo.estados" />
     </key>
   </component>
-  <component name="RunManager" selected="HTTP Request.test | Usuarios API">
-    <configuration name="test | Usuarios API" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="Usuarios API" index="2" runType="Run single request">
-      <method v="2" />
-    </configuration>
-    <configuration name="test | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="#2" index="2" runType="Run single request">
+  <component name="RunManager" selected="HTTP Request.test | #7">
+    <configuration name="TPO_DES_SOFTWARE [clean]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="clean" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
     <configuration name="test | #3" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="#3" index="3" runType="Run single request">
@@ -262,7 +217,7 @@
     <configuration name="test | #5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="#5" index="5" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="test | #6" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="#6" index="6" runType="Run single request">
+    <configuration name="test | #7" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="#7" index="7" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration default="true" type="JetRunConfigurationType">
@@ -287,10 +242,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.test | Usuarios API" />
-        <item itemvalue="HTTP Request.test | #2" />
-        <item itemvalue="HTTP Request.test | #6" />
+        <item itemvalue="HTTP Request.test | #7" />
         <item itemvalue="HTTP Request.test | #5" />
+        <item itemvalue="Gradle.TPO_DES_SOFTWARE [clean]" />
         <item itemvalue="HTTP Request.test | #3" />
       </list>
     </recent_temporary>
@@ -315,7 +269,8 @@
       <workItem from="1747490439326" duration="737000" />
       <workItem from="1747491184351" duration="15080000" />
       <workItem from="1750420404550" duration="3720000" />
-      <workItem from="1750424228904" duration="5865000" />
+      <workItem from="1750424228904" duration="14076000" />
+      <workItem from="1750462642090" duration="1569000" />
     </task>
     <task id="LOCAL-00001" summary="Se agrega refactor a mvn y a pkg de test">
       <option name="closed" value="true" />
@@ -365,7 +320,23 @@
       <option name="project" value="LOCAL" />
       <updated>1747587420364</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added spring boot">
+      <option name="closed" value="true" />
+      <created>1750430429199</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1750430429199</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Add state">
+      <option name="closed" value="true" />
+      <created>1750462731060</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1750462731060</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -376,7 +347,9 @@
     <MESSAGE value="Remove target folder" />
     <MESSAGE value="Ejemplo state pattern para agregar jugadores" />
     <MESSAGE value="Ejemplo estrategia" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ejemplo estrategia" />
+    <MESSAGE value="Added spring boot" />
+    <MESSAGE value="Add state" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add state" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
