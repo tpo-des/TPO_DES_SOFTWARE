@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 import tpo.jugar.model.partido.Partido;
 import tpo.jugar.model.partido.estado.ContextoEstadoPartido;
 import tpo.jugar.model.partido.estado.TipoEstadoPartido;
+import tpo.jugar.model.usuario.Usuario;
 import tpo.jugar.repository.PartidoRepository;
 import tpo.jugar.service.PartidoService;
 

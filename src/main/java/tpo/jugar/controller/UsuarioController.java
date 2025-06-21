@@ -3,6 +3,7 @@ package tpo.jugar.controller;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tpo.jugar.dto.UsuarioDto;
+import tpo.jugar.mapper.UsuarioMapper;
 import tpo.jugar.model.usuario.Usuario;
 import tpo.jugar.service.UsuarioService;
 
@@ -23,7 +24,7 @@ class UsuarioController {
         return ResponseEntity.ok(
                 service.findAll()
                         .stream()
-                        .map(UsuarioController::toDto)
+                        .map(UsuarioMapper::toDto)
                         .toList()
         );
     }
@@ -35,20 +36,13 @@ class UsuarioController {
                 usuarioDto.getEmail(),
                 usuarioDto.getPassword()
         );
-        return ResponseEntity.ok(toDto(service.create(usuario)));
+        return ResponseEntity.ok(UsuarioMapper.toDto(service.create(usuario)));
     }
 
     @GetMapping("/{id}")
     ResponseEntity<UsuarioDto> getById(@PathVariable Long id) {
-        return ResponseEntity.ok(toDto(service.getById(id)));
+        return ResponseEntity.ok(UsuarioMapper.toDto(service.getById(id)));
     }
 
-    private static UsuarioDto toDto(Usuario usuario) {
-        return new UsuarioDto(
-                usuario.getId(),
-                usuario.getNombreUsuario(),
-                usuario.getEmail(),
-                usuario.getPassword()
-        );
-    }
+
 }

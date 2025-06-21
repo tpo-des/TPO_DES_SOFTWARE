@@ -1,9 +1,11 @@
 package tpo.jugar.model.usuario;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
+import tpo.jugar.model.jugador.Jugador;
+import tpo.jugar.model.partido.Partido;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Usuario {
@@ -14,6 +16,14 @@ public class Usuario {
     private String nombreUsuario;
     private String email;
     private String password;
+
+    @OneToMany(
+            mappedBy = "usuario",
+            cascade = CascadeType.MERGE,
+            fetch = FetchType.LAZY
+    )
+    private List<Jugador> juegaEn = new ArrayList<>();
+
 
     protected Usuario() {}
 
@@ -53,5 +63,13 @@ public class Usuario {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public List<Jugador> getJuegaEn() {
+        return juegaEn;
+    }
+
+    public void setJuegaEn(List<Jugador> juegaEn) {
+        this.juegaEn = juegaEn;
     }
 }

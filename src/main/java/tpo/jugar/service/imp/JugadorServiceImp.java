@@ -32,11 +32,20 @@ public class JugadorServiceImp implements JugadorService {
     }
 
     @Override
+    public List<Jugador> getByUsuarioId(long usuarioId) {
+        Usuario usuario = usuarioService.getById(usuarioId);
+        return usuario.getJuegaEn();
+    }
+
+    @Override
     public Jugador addJugador(long partidoId, long usuarioId, Boolean confirmado) {
         Partido partido = partidoService.getById(partidoId);
         Usuario usuario = usuarioService.getById(usuarioId);
-        Jugador jugador = new Jugador(partido, usuario, confirmado);
-        ContextoEstadoPartido ctx = new ContextoEstadoPartido(partido);
+       return addJugador(new Jugador(partido, usuario, confirmado));
+    }
+
+    public Jugador addJugador(Jugador jugador) {
+        ContextoEstadoPartido ctx = new ContextoEstadoPartido(jugador.getPartido());
         String result = ctx.agregarJugador(jugador);
         logger.info(result);
         partidoService.update(ctx.getPartido());

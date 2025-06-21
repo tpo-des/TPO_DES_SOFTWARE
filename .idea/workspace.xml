@@ -4,28 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="423faa01-b53f-4ebd-b274-c826079a7e40" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/controller/JugadorController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/dto/JugadorDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/jugador/Jugador.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/jugador/JugadorId.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/JugadorService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/imp/JugadorServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="423faa01-b53f-4ebd-b274-c826079a7e40" name="Changes" comment="Add jugador">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/controller/UsuarioPartidoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/repository/JugadorRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/UsuarioPartidoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/imp/UsuarioPartidoServiceImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/controller/PartidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/controller/PartidoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/Partido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/Partido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/estado/ContextoEstadoPartido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/estado/ContextoEstadoPartido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/estado/EstadoCancelado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/estado/EstadoCancelado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/estado/EstadoConfirmado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/estado/EstadoConfirmado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/estado/EstadoEnJuego.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/estado/EstadoEnJuego.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/estado/EstadoFinalizado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/estado/EstadoFinalizado.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/estado/EstadoNecesitamosJugadores.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/estado/EstadoNecesitamosJugadores.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/estado/EstadoPartido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/estado/EstadoPartido.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/estado/EstadoPartidoArmado.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/estado/EstadoPartidoArmado.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/controller/JugadorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/controller/PartidoJugadorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/JugadorService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/JugadorService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/PartidoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/PartidoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/imp/JugadorServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/imp/JugadorServiceImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/imp/PartidoServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/imp/PartidoServiceImp.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test.http" beforeDir="false" afterPath="$PROJECT_DIR$/test.http" afterDir="false" />
     </list>
     <list id="e5400add-2ef8-4987-914c-2f5e8731586f" name="Changes by alan.gagliero" comment="" />
     <option name="SHOW_DIALOG" value="false" />
@@ -78,8 +67,8 @@
         <option value="package-info" />
         <option value="Enum" />
         <option value="Kotlin Class" />
-        <option value="Interface" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -185,6 +174,7 @@
       <recent name="" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="tpo.jugar.service.imp" />
       <recent name="tpo.jugar.model" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
@@ -326,7 +316,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747587420364</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Add jugador">
+      <option name="closed" value="true" />
+      <created>1750512254749</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1750512254749</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,7 +335,8 @@
     <MESSAGE value="Remove target folder" />
     <MESSAGE value="Ejemplo state pattern para agregar jugadores" />
     <MESSAGE value="Ejemplo estrategia" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ejemplo estrategia" />
+    <MESSAGE value="Add jugador" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add jugador" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

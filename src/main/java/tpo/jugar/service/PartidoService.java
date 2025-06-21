@@ -1,6 +1,7 @@
 package tpo.jugar.service;
 
 import tpo.jugar.model.partido.Partido;
+import tpo.jugar.model.usuario.Usuario;
 
 import java.util.List;
 
