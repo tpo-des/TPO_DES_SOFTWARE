@@ -42,6 +42,11 @@ public class PartidoServiceImp implements PartidoService {
         return repository.save(partido);
     }
 
+    @Override
+    public Partido update(Partido partido) {
+        return repository.save(partido);
+    }
+
     private ContextoEstadoPartido getEstadoPartido(long id) {
         Partido partido = getById(id);
         return new ContextoEstadoPartido(partido);

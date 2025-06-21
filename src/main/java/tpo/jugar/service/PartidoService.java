@@ -9,6 +9,7 @@ public interface PartidoService {
     List<Partido> findNecesitadosDeJugadoresBy(String ubicacion);
     Partido getById(long id);
     Partido create(Partido partido);
+    Partido update(Partido partido);
     Partido finalizar(long id);
     Partido cancelar(long id);
 }

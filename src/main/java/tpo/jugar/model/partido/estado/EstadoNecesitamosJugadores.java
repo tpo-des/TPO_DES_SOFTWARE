@@ -1,13 +1,14 @@
 package tpo.jugar.model.partido.estado;
 
 import tpo.jugar.exception.InvalidoEstadoPartidoException;
+import tpo.jugar.model.jugador.Jugador;
 import tpo.jugar.model.usuario.Usuario;
 
 public class EstadoNecesitamosJugadores implements EstadoPartido {
 
     @Override
-    public String agregarJugador(ContextoEstadoPartido contexto, Usuario usuario) {
-        contexto.getPartido().addJugador(usuario);
+    public String agregarJugador(ContextoEstadoPartido contexto, Jugador jugador) {
+        contexto.getPartido().addJugador(jugador);
         if (!contexto.getPartido().faltanJugadores()) {
             contexto.setEstado(new EstadoPartidoArmado());
             return "El partido con id " + contexto.getPartido().getId() + " ha sido armado.";

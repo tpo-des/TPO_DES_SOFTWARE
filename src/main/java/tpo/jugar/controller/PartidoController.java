@@ -2,7 +2,9 @@ package tpo.jugar.controller;
 
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import tpo.jugar.dto.JugadorDto;
 import tpo.jugar.dto.PartidoDto;
+import tpo.jugar.model.jugador.Jugador;
 import tpo.jugar.model.partido.Partido;
 import tpo.jugar.service.PartidoService;
 

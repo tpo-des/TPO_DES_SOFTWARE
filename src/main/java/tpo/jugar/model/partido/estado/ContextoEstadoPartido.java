@@ -1,5 +1,6 @@
 package tpo.jugar.model.partido.estado;
 
+import tpo.jugar.model.jugador.Jugador;
 import tpo.jugar.model.partido.Partido;
 
 public class ContextoEstadoPartido {
@@ -21,6 +22,10 @@ public class ContextoEstadoPartido {
 
     public String cancelar() {
         return estado.cancelar(this);
+    }
+
+    public String agregarJugador(Jugador jugador) {
+        return estado.agregarJugador(this, jugador);
     }
 
     public void setEstado(EstadoPartido estado) {

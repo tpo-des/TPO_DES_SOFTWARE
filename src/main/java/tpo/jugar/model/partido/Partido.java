@@ -1,6 +1,7 @@
 package tpo.jugar.model.partido;
 
 import jakarta.persistence.*;
+import tpo.jugar.model.jugador.Jugador;
 import tpo.jugar.model.partido.estado.TipoEstadoPartido;
 import tpo.jugar.model.usuario.Usuario;
 
@@ -18,13 +19,12 @@ public class Partido {
     private Integer cantidadDeJugadores;
     private String ubicacion;
 
-    @ManyToMany
-    @JoinTable(
-            name = "partido_usuario",
-            joinColumns = @JoinColumn(name = "partido_id"),
-            inverseJoinColumns = @JoinColumn(name = "usuario_id")
+    @OneToMany(
+            mappedBy = "partido",
+            cascade = CascadeType.MERGE,
+            fetch = FetchType.LAZY
     )
-    private List<Usuario> jugadores;
+    private List<Jugador> jugadores = new ArrayList<>();
 
     protected Partido() {}
 
@@ -67,19 +67,19 @@ public class Partido {
         this.cantidadDeJugadores = cantidadDeJugadores;
     }
 
-    public List<Usuario> getJugadores() {
+    public List<Jugador> getJugadores() {
         return jugadores;
     }
 
-    public void setJugadores(List<Usuario> jugadores) {
+    public void setJugadores(List<Jugador> jugadores) {
         this.jugadores = jugadores;
     }
 
-    public void addJugador(Usuario jugador) {
+    public void addJugador(Jugador jugador) {
         this.jugadores.add(jugador);
     }
 
-    public void removeJugador(Usuario jugador) {
+    public void removeJugador(Jugador jugador) {
         this.jugadores.remove(jugador);
     }
 

@@ -1,12 +1,13 @@
 package tpo.jugar.model.partido.estado;
 
 import tpo.jugar.exception.InvalidoEstadoPartidoException;
+import tpo.jugar.model.jugador.Jugador;
 import tpo.jugar.model.usuario.Usuario;
 
 public class EstadoConfirmado implements  EstadoPartido {
 
     @Override
-    public String agregarJugador(ContextoEstadoPartido contexto, Usuario usuario) {
+    public String agregarJugador(ContextoEstadoPartido contexto, Jugador jugador) {
         throw new InvalidoEstadoPartidoException(contexto.getPartido());
     }
 
