@@ -2,6 +2,7 @@ package tpo.jugar.service.imp;
 
 import org.springframework.stereotype.Service;
 import tpo.jugar.exception.NotFoundException;
+import tpo.jugar.model.usuario.NivelUsuario;
 import tpo.jugar.model.usuario.Usuario;
 import tpo.jugar.repository.UsuarioRepository;
 import tpo.jugar.service.UsuarioService;
@@ -30,6 +31,9 @@ public class UsuarioServiceImp implements UsuarioService {
 
     @Override
     public Usuario create(Usuario usuario) {
+        if (usuario.getNivel() == null) {
+            usuario.setNivel(NivelUsuario.PRINCIPIANTE);
+        }
         return repository.save(usuario);
     }
 }

@@ -10,7 +10,8 @@ Content-Type: application/json
 {
      "nombreUsuario": "Alan Turing",
      "email": "alan.fadga@gmail.com",
-     "password": "password123"
+     "password": "password123",
+     "nivel": "AVANZADO"
 }
 
 ###
@@ -74,6 +75,6 @@ POST http://localhost:8080/api/v1/partidos/2/jugadores
 Content-Type: application/json
 
 {
-  "usuarioId": 1,
+  "usuarioId": 52,
   "confirmado": false
 }

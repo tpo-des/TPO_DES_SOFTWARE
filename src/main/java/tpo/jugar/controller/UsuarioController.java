@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tpo.jugar.dto.UsuarioDto;
 import tpo.jugar.mapper.UsuarioMapper;
+import tpo.jugar.model.deporte.Deporte;
 import tpo.jugar.model.usuario.Usuario;
 import tpo.jugar.service.UsuarioService;
 
@@ -34,8 +35,12 @@ class UsuarioController {
         Usuario usuario = new Usuario(
                 usuarioDto.getNombreUsuario(),
                 usuarioDto.getEmail(),
-                usuarioDto.getPassword()
+                usuarioDto.getPassword(),
+                usuarioDto.getNivel()
         );
+        if (usuarioDto.getDeporteFavorito() != null) {
+            usuario.setDeporteFavorito(new Deporte(usuarioDto.getDeporteFavorito().getId()));
+        }
         return ResponseEntity.ok(UsuarioMapper.toDto(service.create(usuario)));
     }
 

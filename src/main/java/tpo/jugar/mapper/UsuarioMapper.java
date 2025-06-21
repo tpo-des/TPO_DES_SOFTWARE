@@ -6,11 +6,16 @@ import tpo.jugar.model.usuario.Usuario;
 public class UsuarioMapper {
 
     public static UsuarioDto toDto(Usuario usuario) {
-        return new UsuarioDto(
+        UsuarioDto usuarioDto =  new UsuarioDto(
                 usuario.getId(),
                 usuario.getNombreUsuario(),
                 usuario.getEmail(),
-                usuario.getPassword()
+                usuario.getPassword(),
+                usuario.getNivel()
         );
+        if (usuario.getDeporteFavorito() != null) {
+            usuarioDto.setDeporteFavorito(DeporteMapper.toDto(usuario.getDeporteFavorito()));
+        }
+        return usuarioDto;
     }
 }

@@ -1,6 +1,7 @@
 package tpo.jugar.model.usuario;
 
 import jakarta.persistence.*;
+import tpo.jugar.model.deporte.Deporte;
 import tpo.jugar.model.jugador.Jugador;
 import tpo.jugar.model.partido.Partido;
 
@@ -16,6 +17,11 @@ public class Usuario {
     private String nombreUsuario;
     private String email;
     private String password;
+    private NivelUsuario nivel;
+
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "deporte_id")
+    private Deporte deporteFavorito;
 
     @OneToMany(
             mappedBy = "usuario",
@@ -27,10 +33,11 @@ public class Usuario {
 
     protected Usuario() {}
 
-    public Usuario(String nombreUsuario, String email, String password) {
+    public Usuario(String nombreUsuario, String email, String password, NivelUsuario nivel) {
         this.nombreUsuario = nombreUsuario;
         this.email = email;
         this.password = password;
+        this.nivel = nivel;
     }
 
     public Long getId() {
@@ -63,6 +70,22 @@ public class Usuario {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public NivelUsuario getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(NivelUsuario nivel) {
+        this.nivel = nivel;
+    }
+
+    public Deporte getDeporteFavorito() {
+        return deporteFavorito;
+    }
+
+    public void setDeporteFavorito(Deporte deporteFavorito) {
+        this.deporteFavorito = deporteFavorito;
     }
 
     public List<Jugador> getJuegaEn() {

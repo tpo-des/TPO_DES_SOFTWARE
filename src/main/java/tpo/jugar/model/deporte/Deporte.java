@@ -15,6 +15,10 @@ public class Deporte {
 
     public Deporte() {}
 
+    public Deporte(Long id) {
+        this.id = id;
+    }
+
     public String getNombre() {
         return nombre;
     }
