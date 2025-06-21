@@ -4,7 +4,6 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import tpo.jugar.dto.UsuarioDto;
 import tpo.jugar.mapper.UsuarioMapper;
-import tpo.jugar.model.deporte.Deporte;
 import tpo.jugar.model.usuario.Usuario;
 import tpo.jugar.service.UsuarioService;
 
@@ -32,22 +31,14 @@ class UsuarioController {
 
     @PostMapping
     ResponseEntity<UsuarioDto> create(@RequestBody UsuarioDto usuarioDto) {
-        Usuario usuario = new Usuario(
-                usuarioDto.getNombreUsuario(),
-                usuarioDto.getEmail(),
-                usuarioDto.getPassword(),
-                usuarioDto.getNivel()
-        );
-        if (usuarioDto.getDeporteFavorito() != null) {
-            usuario.setDeporteFavorito(new Deporte(usuarioDto.getDeporteFavorito().getId()));
-        }
+        Usuario usuario = UsuarioMapper.toEntity(usuarioDto);
         return ResponseEntity.ok(UsuarioMapper.toDto(service.create(usuario)));
     }
 
     @GetMapping("/{id}")
     ResponseEntity<UsuarioDto> getById(@PathVariable Long id) {
-        return ResponseEntity.ok(UsuarioMapper.toDto(service.getById(id)));
+        Usuario usuario = service.getById(id);
+        UsuarioDto usuarioDto = UsuarioMapper.toDto(usuario);
+        return ResponseEntity.ok(usuarioDto);
     }
-
-
 }
