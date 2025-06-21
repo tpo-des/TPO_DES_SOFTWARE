@@ -10,7 +10,7 @@ public class Notificator {
         this.estrategiaDeNotificacion = nueva;
     }
 
-    void notificarEvento(Usuario usuario, String mensaje) {
+    public void notificarEvento(Usuario usuario, String mensaje) {
         EstrategiaDeNotificacion estrategia = EstrategiaDeNotificacionFactory.create(TipoEstrategiaNotificacion.SMS);
         this.setEstrategiaDeNotificacion(estrategia);
         this.estrategiaDeNotificacion.notificar(usuario, mensaje);

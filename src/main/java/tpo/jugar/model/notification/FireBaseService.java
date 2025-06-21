@@ -5,7 +5,7 @@ import org.slf4j.LoggerFactory;
 
 public class FireBaseService {
 
-    private Logger logger = LoggerFactory.getLogger(PorSMSEstrategiaDeNotificacion.class);
+    private final Logger logger = LoggerFactory.getLogger(PorSMSEstrategiaDeNotificacion.class);
 
     public void sendPush(String token, String msg){
         logger.info("Enviando mensaje token: {} msg: {}", token, msg);

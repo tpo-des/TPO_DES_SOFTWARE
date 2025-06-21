@@ -14,5 +14,6 @@ public class PorSMSEstrategiaDeNotificacion implements EstrategiaDeNotificacion 
 
     @Override
     public void notificar(Usuario usuario, String mensaje){
+        smsServiceAdapter.enviarMensajeDeTexto(1141, mensaje);
     };
 }

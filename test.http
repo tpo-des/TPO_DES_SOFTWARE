@@ -11,7 +11,10 @@ Content-Type: application/json
      "nombreUsuario": "Alan Turing",
      "email": "alan.fadga@gmail.com",
      "password": "password123",
-     "nivel": "AVANZADO"
+     "nivel": "AVANZADO",
+     "deporteFavorito": {
+            "id": 252
+     }
 }
 
 ###

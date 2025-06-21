@@ -2,6 +2,7 @@ package tpo.jugar.service.imp;
 
 import org.springframework.stereotype.Service;
 import tpo.jugar.exception.NotFoundException;
+import tpo.jugar.model.deporte.Deporte;
 import tpo.jugar.model.usuario.NivelUsuario;
 import tpo.jugar.model.usuario.Usuario;
 import tpo.jugar.repository.UsuarioRepository;
@@ -21,6 +22,11 @@ public class UsuarioServiceImp implements UsuarioService {
 
     public List<Usuario> findAll() {
         return repository.findAll();
+    }
+
+    @Override
+    public List<Usuario> findByDeporteFavorito(Deporte deporte) {
+        return repository.findByDeporteFavorito(deporte);
     }
 
     @Override

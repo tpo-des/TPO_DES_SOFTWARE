@@ -4,20 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="423faa01-b53f-4ebd-b274-c826079a7e40" name="Changes" comment="Add jugador">
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/controller/DeporteController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/dto/DeporteDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/mapper/DeporteMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/repository/DeporteRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/DeporteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/imp/DeporteServiceImp.java" afterDir="false" />
+    <list default="true" id="423faa01-b53f-4ebd-b274-c826079a7e40" name="Changes" comment="Add deporte and nivel to user">
+      <change afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/imp/PartidoServiceDecorator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/controller/PartidoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/controller/PartidoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/dto/PartidoDto.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/dto/PartidoDto.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/mapper/PartidoMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/mapper/PartidoMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/entity/Deporte.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/deporte/Deporte.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/Partido.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/partido/Partido.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/notification/FireBaseService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/notification/FireBaseService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/notification/Notificator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/notification/Notificator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/notification/PorSMSEstrategiaDeNotificacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/model/notification/PorSMSEstrategiaDeNotificacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/repository/UsuarioRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/repository/UsuarioRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/UsuarioService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/UsuarioService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/imp/PartidoServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/imp/PartidoServiceImp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/imp/UsuarioServiceImp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/tpo/jugar/service/imp/UsuarioServiceImp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/test.http" beforeDir="false" afterPath="$PROJECT_DIR$/test.http" afterDir="false" />
     </list>
     <list id="e5400add-2ef8-4987-914c-2f5e8731586f" name="Changes by alan.gagliero" comment="" />
@@ -123,6 +119,8 @@
     "Gradle.Download Sources.executor": "Run",
     "Gradle.TPO_DES_SOFTWARE [clean].executor": "Run",
     "HTTP Request.test | #10.executor": "Run",
+    "HTTP Request.test | #11.executor": "Run",
+    "HTTP Request.test | #12.executor": "Run",
     "HTTP Request.test | #2.executor": "Run",
     "HTTP Request.test | #3.executor": "Run",
     "HTTP Request.test | #4.executor": "Run",
@@ -193,13 +191,13 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.JugarApplication">
-    <configuration name="test | #4" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="#4" index="4" runType="Run single request">
+    <configuration name="test | #11" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="#11" index="11" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="test | #5" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="#5" index="5" runType="Run single request">
+    <configuration name="test | #12" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="#12" index="12" runType="Run single request">
       <method v="2" />
     </configuration>
-    <configuration name="test | #6" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="#6" index="6" runType="Run single request">
+    <configuration name="test | #2" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="#2" index="2" runType="Run single request">
       <method v="2" />
     </configuration>
     <configuration name="test | #8" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/test.http" executionIdentifier="#8" index="8" runType="Run single request">
@@ -230,11 +228,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="HTTP Request.test | #9" />
         <item itemvalue="HTTP Request.test | #8" />
-        <item itemvalue="HTTP Request.test | #5" />
-        <item itemvalue="HTTP Request.test | #6" />
-        <item itemvalue="HTTP Request.test | #4" />
+        <item itemvalue="HTTP Request.test | #2" />
+        <item itemvalue="HTTP Request.test | #11" />
+        <item itemvalue="HTTP Request.test | #12" />
+        <item itemvalue="HTTP Request.test | #9" />
       </list>
     </recent_temporary>
   </component>
@@ -325,7 +323,23 @@
       <option name="project" value="LOCAL" />
       <updated>1750515335271</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Add deporte and nivel to user">
+      <option name="closed" value="true" />
+      <created>1750537248545</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1750537248545</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Add deporte and nivel to user">
+      <option name="closed" value="true" />
+      <created>1750537420564</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1750537420564</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -337,18 +351,8 @@
     <MESSAGE value="Ejemplo state pattern para agregar jugadores" />
     <MESSAGE value="Ejemplo estrategia" />
     <MESSAGE value="Add jugador" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add jugador" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/main/java/tpo/jugar/controller/GreetingController.java</url>
-          <line>7</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Add deporte and nivel to user" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add deporte and nivel to user" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

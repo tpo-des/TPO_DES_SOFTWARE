@@ -2,6 +2,7 @@ package tpo.jugar.service.imp;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 import tpo.jugar.model.partido.Partido;
 import tpo.jugar.model.partido.estado.ContextoEstadoPartido;
@@ -12,6 +13,7 @@ import tpo.jugar.service.PartidoService;
 import java.util.List;
 
 @Service
+@Qualifier("DefaultImplementation")
 public class PartidoServiceImp implements PartidoService {
 
     Logger logger = LoggerFactory.getLogger(PartidoServiceImp.class);
