@@ -13,7 +13,6 @@ import tpo.jugar.service.UsuarioService;
 
 import java.util.List;
 
-
 @Service
 @Primary
 public class PartidoServiceDecorator implements PartidoService {
