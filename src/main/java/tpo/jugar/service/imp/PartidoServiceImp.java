@@ -1,9 +1,13 @@
 package tpo.jugar.service.imp;
 
+import jakarta.persistence.PersistenceContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
+import tpo.jugar.model.event.PartidoCambioEstadoEvento;
+import tpo.jugar.model.event.PartidoCreadoEvento;
 import tpo.jugar.model.partido.Partido;
 import tpo.jugar.model.partido.estado.ContextoEstadoPartido;
 import tpo.jugar.model.partido.estado.TipoEstadoPartido;
@@ -13,15 +17,16 @@ import tpo.jugar.service.PartidoService;
 import java.util.List;
 
 @Service
-@Qualifier("DefaultImplementation")
 public class PartidoServiceImp implements PartidoService {
 
     Logger logger = LoggerFactory.getLogger(PartidoServiceImp.class);
 
     private final PartidoRepository repository;
+    private final ApplicationEventPublisher eventPublisher;
 
-    public PartidoServiceImp(PartidoRepository repository) {
+    public PartidoServiceImp(PartidoRepository repository, ApplicationEventPublisher eventPublisher) {
         this.repository = repository;
+        this.eventPublisher = eventPublisher;
     }
 
     @Override
@@ -41,7 +46,9 @@ public class PartidoServiceImp implements PartidoService {
 
     @Override
     public Partido create(Partido partido) {
-        return repository.save(partido);
+        Partido partidoGuardado = repository.save(partido);
+        eventPublisher.publishEvent(new PartidoCreadoEvento(this, partidoGuardado));
+        return partidoGuardado;
     }
 
     @Override
@@ -51,7 +58,7 @@ public class PartidoServiceImp implements PartidoService {
 
     private ContextoEstadoPartido getEstadoPartido(long id) {
         Partido partido = getById(id);
-        return new ContextoEstadoPartido(partido);
+        return new ContextoEstadoPartido(eventPublisher, partido);
     }
 
     @Override

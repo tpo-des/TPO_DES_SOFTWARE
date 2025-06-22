@@ -2,6 +2,7 @@ package tpo.jugar.service.imp;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.context.ApplicationEventPublisher;
 import org.springframework.stereotype.Service;
 import tpo.jugar.model.jugador.Jugador;
 import tpo.jugar.model.partido.Partido;
@@ -20,10 +21,12 @@ public class JugadorServiceImp implements JugadorService {
 
     private final PartidoService partidoService;
     private final UsuarioService usuarioService;
+    private final ApplicationEventPublisher eventPublisher;
 
-    public JugadorServiceImp(PartidoService partidoService, UsuarioService usuarioService) {
+    public JugadorServiceImp(PartidoService partidoService, UsuarioService usuarioService, ApplicationEventPublisher eventPublisher) {
         this.partidoService = partidoService;
         this.usuarioService = usuarioService;
+        this.eventPublisher = eventPublisher;
     }
 
     @Override
@@ -46,7 +49,7 @@ public class JugadorServiceImp implements JugadorService {
                 .findFirst()
                 .orElseThrow();
         jugador.setConfirmado(true);
-        ContextoEstadoPartido ctx = new ContextoEstadoPartido(jugador.getPartido());
+        ContextoEstadoPartido ctx = new ContextoEstadoPartido(eventPublisher, jugador.getPartido());
         String result = ctx.confirmar(jugador);
         logger.info(result);
         partidoService.update(ctx.getPartido());
@@ -61,7 +64,7 @@ public class JugadorServiceImp implements JugadorService {
     }
 
     public Jugador addJugador(Jugador jugador) {
-        ContextoEstadoPartido ctx = new ContextoEstadoPartido(jugador.getPartido());
+        ContextoEstadoPartido ctx = new ContextoEstadoPartido(eventPublisher, jugador.getPartido());
         String result = ctx.agregarJugador(jugador);
         logger.info(result);
         if (jugador.getConfirmado() == true) {
