@@ -31,4 +31,12 @@ public class EstadoNecesitamosJugadores implements EstadoPartido {
     public String comenzar(ContextoEstadoPartido contexto) {
         throw new InvalidoEstadoPartidoException(contexto.getPartido());
     }
+
+    @Override
+    public String confirmar(ContextoEstadoPartido contexto, Jugador jugador) {
+        if (!contexto.getPartido().getJugadores().contains(jugador)) {
+            throw new InvalidoEstadoPartidoException(contexto.getPartido());
+        }
+        return "Jugador " + jugador.getUsuario().getNombreUsuario() + " confirmado en el partido con id " + contexto.getPartido().getId() + ".";
+    }
 }

@@ -26,4 +26,9 @@ public class EstadoFinalizado implements  EstadoPartido {
     public String comenzar(ContextoEstadoPartido contexto) {
         throw new InvalidoEstadoPartidoException(contexto.getPartido());
     }
+
+    @Override
+    public String confirmar(ContextoEstadoPartido contexto, Jugador jugador) {
+        throw new InvalidoEstadoPartidoException(contexto.getPartido());
+    }
 }

@@ -8,4 +8,5 @@ public interface JugadorService {
     List<Jugador> getByPartidoId(long partidoId);
     Jugador addJugador(long partidoId, long usuarioId, Boolean confirmado);
     List<Jugador> getByUsuarioId(long usuarioId);
+    Jugador confirmarJugador(long partidoId, long usuarioId);
 }

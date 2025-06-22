@@ -27,4 +27,9 @@ public class EstadoConfirmado implements  EstadoPartido {
         contexto.setEstado(new EstadoEnJuego());
         return "El partido con id " + contexto.getPartido().getId() + " ha comenzado.";
     }
+
+    @Override
+    public String confirmar(ContextoEstadoPartido contexto, Jugador jugador) {
+        throw new InvalidoEstadoPartidoException(contexto.getPartido());
+    }
 }

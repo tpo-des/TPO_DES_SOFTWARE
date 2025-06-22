@@ -9,4 +9,5 @@ public interface EstadoPartido {
     String finalizar(ContextoEstadoPartido contexto);
     String cancelar(ContextoEstadoPartido contexto);
     String comenzar(ContextoEstadoPartido contexto);
+    String confirmar(ContextoEstadoPartido contexto, Jugador jugador);
 }

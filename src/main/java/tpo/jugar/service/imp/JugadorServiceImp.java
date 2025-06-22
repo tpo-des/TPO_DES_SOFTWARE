@@ -38,6 +38,22 @@ public class JugadorServiceImp implements JugadorService {
     }
 
     @Override
+    public Jugador confirmarJugador(long partidoId, long usuarioId) {
+        Partido partido = partidoService.getById(partidoId);
+        Jugador jugador = partido.getJugadores()
+                .stream()
+                .filter(j -> j.getUsuario().getId() == usuarioId)
+                .findFirst()
+                .orElseThrow();
+        jugador.setConfirmado(true);
+        ContextoEstadoPartido ctx = new ContextoEstadoPartido(jugador.getPartido());
+        String result = ctx.confirmar(jugador);
+        logger.info(result);
+        partidoService.update(ctx.getPartido());
+        return jugador;
+    }
+
+    @Override
     public Jugador addJugador(long partidoId, long usuarioId, Boolean confirmado) {
         Partido partido = partidoService.getById(partidoId);
         Usuario usuario = usuarioService.getById(usuarioId);
@@ -47,6 +63,10 @@ public class JugadorServiceImp implements JugadorService {
     public Jugador addJugador(Jugador jugador) {
         ContextoEstadoPartido ctx = new ContextoEstadoPartido(jugador.getPartido());
         String result = ctx.agregarJugador(jugador);
+        logger.info(result);
+        if (jugador.getConfirmado() == true) {
+            result = ctx.confirmar(jugador);
+        }
         logger.info(result);
         partidoService.update(ctx.getPartido());
         return jugador;

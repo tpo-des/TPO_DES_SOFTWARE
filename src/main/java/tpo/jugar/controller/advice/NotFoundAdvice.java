@@ -1,18 +1,18 @@
 package tpo.jugar.controller.advice;
 
+import jakarta.persistence.EntityNotFoundException;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 import tpo.jugar.dto.ErrorDto;
-import tpo.jugar.exception.NotFoundException;
 
 @RestControllerAdvice
 class NotFoundAdvice {
 
-    @ExceptionHandler(NotFoundException.class)
+    @ExceptionHandler(EntityNotFoundException.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    ErrorDto notFoundHandler(NotFoundException ex) {
+    ErrorDto notFoundHandler(EntityNotFoundException ex) {
         return new ErrorDto(ex.getMessage());
     }
 }

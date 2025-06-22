@@ -29,6 +29,10 @@ public class ContextoEstadoPartido {
         return estado.agregarJugador(this, jugador);
     }
 
+    public String confirmar(Jugador jugador) {
+        return estado.confirmar(this, jugador);
+    }
+
     public EstadoPartido getEstado() {
         return estado;
     }

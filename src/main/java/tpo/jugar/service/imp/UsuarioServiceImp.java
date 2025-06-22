@@ -1,7 +1,6 @@
 package tpo.jugar.service.imp;
 
 import org.springframework.stereotype.Service;
-import tpo.jugar.exception.NotFoundException;
 import tpo.jugar.model.deporte.Deporte;
 import tpo.jugar.model.notification.TipoEstrategiaNotificacion;
 import tpo.jugar.model.usuario.NivelUsuario;
@@ -31,8 +30,7 @@ public class UsuarioServiceImp implements UsuarioService {
 
     @Override
     public Usuario getById(long id) {
-        return repository.findById(id)
-                .orElseThrow(() -> new NotFoundException("No se encontró el usuario con id: " + id));
+        return repository.getReferenceById(id);
     }
 
     @Override
