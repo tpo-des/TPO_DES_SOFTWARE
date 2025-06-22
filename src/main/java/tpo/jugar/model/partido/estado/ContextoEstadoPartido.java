@@ -17,7 +17,8 @@ public class ContextoEstadoPartido {
     }
 
     public String finalizar() {
-        return estado.finalizar(this);
+        String resultad = estado.finalizar(this);
+        return resultad;
     }
 
     public String cancelar() {
@@ -26,6 +27,10 @@ public class ContextoEstadoPartido {
 
     public String agregarJugador(Jugador jugador) {
         return estado.agregarJugador(this, jugador);
+    }
+
+    public EstadoPartido getEstado() {
+        return estado;
     }
 
     public void setEstado(EstadoPartido estado) {

@@ -1,5 +1,6 @@
 package tpo.jugar.dto;
 
+import tpo.jugar.model.notification.TipoEstrategiaNotificacion;
 import tpo.jugar.model.usuario.NivelUsuario;
 
 public class UsuarioDto {
@@ -8,6 +9,7 @@ public class UsuarioDto {
     private String email;
     private String password;
     private NivelUsuario nivel;
+    private TipoEstrategiaNotificacion preferenciaNotificacion;
     private DeporteDto deporteFavorito;
 
     public UsuarioDto(Long id, String nombreUsuario, String email, String password, NivelUsuario nivel) {
@@ -56,6 +58,14 @@ public class UsuarioDto {
 
     public void setNivel(NivelUsuario nivel) {
         this.nivel = nivel;
+    }
+
+    public TipoEstrategiaNotificacion getPreferenciaNotificacion() {
+        return preferenciaNotificacion;
+    }
+
+    public void setPreferenciaNotificacion(TipoEstrategiaNotificacion preferenciaNotificacion) {
+        this.preferenciaNotificacion = preferenciaNotificacion;
     }
 
     public DeporteDto getDeporteFavorito() {

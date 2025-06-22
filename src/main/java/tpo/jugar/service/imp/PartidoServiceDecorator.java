@@ -4,13 +4,15 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.context.annotation.Primary;
 import org.springframework.stereotype.Service;
 import tpo.jugar.model.deporte.Deporte;
-import tpo.jugar.model.notification.Notificator;
+import tpo.jugar.model.jugador.Jugador;
 import tpo.jugar.model.partido.Partido;
 import tpo.jugar.model.usuario.Usuario;
 import tpo.jugar.service.PartidoService;
+import tpo.jugar.service.UsuarioNotificationService;
 import tpo.jugar.service.UsuarioService;
 
 import java.util.List;
+
 
 @Service
 @Primary
@@ -18,10 +20,16 @@ public class PartidoServiceDecorator implements PartidoService {
 
     private PartidoService delegate;
     private UsuarioService usuarioService;
+    private UsuarioNotificationService usuarioNotificationService;
 
-    public PartidoServiceDecorator(UsuarioService usuarioService, @Qualifier("DefaultImplementation") PartidoService delegate) {
+    public PartidoServiceDecorator(
+            UsuarioService usuarioService,
+            @Qualifier("DefaultImplementation") PartidoService delegate,
+            UsuarioNotificationService usuarioNotificationService
+    ) {
         this.usuarioService = usuarioService;
         this.delegate = delegate;
+        this.usuarioNotificationService = usuarioNotificationService;
     }
 
     @Override
@@ -43,14 +51,10 @@ public class PartidoServiceDecorator implements PartidoService {
     public Partido create(Partido partido) {
         Partido partidoActualizado = delegate.create(partido);
         Deporte deporte = partido.getDeporte();
-        List<Usuario> usuarios = usuarioService.findByDeporteFavorito(deporte);
-        Notificator notificator = new Notificator();
-        for (Usuario usuario : usuarios) {
-            notificator.notificarEvento(
-                    usuario,
-                    "Nuevo partido creado para la fecha " + partido.getFechaComienzo() + " en " + partido.getUbicacion() + ". ¡No te lo pierdas!"
-            );
-        }
+        usuarioService.findByDeporteFavorito(deporte)
+                .forEach(usuario -> usuarioNotificationService
+                        .notificarUsuarios(usuario, templateCrearPartido(partidoActualizado, usuario))
+                );
         return partidoActualizado;
     }
 
@@ -61,11 +65,62 @@ public class PartidoServiceDecorator implements PartidoService {
 
     @Override
     public Partido finalizar(long id) {
-        return delegate.finalizar(id);
+        Partido partidoActualizado = delegate.finalizar(id);
+        partidoActualizado.getJugadores()
+                .stream()
+                .map(Jugador::getUsuario)
+                .forEach(usuario -> usuarioNotificationService
+                        .notificarUsuarios(usuario, templateFinalizarPartido(partidoActualizado, usuario)))
+        ;
+        return partidoActualizado;
     }
 
     @Override
     public Partido cancelar(long id) {
-        return delegate.cancelar(id);
+        Partido partidoActualizado = delegate.cancelar(id);
+        partidoActualizado.getJugadores()
+                .stream()
+                .map(Jugador::getUsuario)
+                .forEach(usuario -> usuarioNotificationService
+                        .notificarUsuarios(usuario, templateCancelarPartido(partidoActualizado, usuario)))
+        ;
+        return partidoActualizado;
+    }
+
+    public String templateCrearPartido(Partido partido, Usuario usuario) {
+        return """
+                Hola %s,
+                Se ha creado un nuevo partido en la ubicación %s, que comienza el %s.
+                !No olvides unirte!
+                """
+                .formatted(
+                        usuario.getNombreUsuario(),
+                        partido.getUbicacion(),
+                        partido.getFechaComienzo()
+                );
+    }
+
+    public String templateFinalizarPartido(Partido partido, Usuario usuario) {
+        return """
+                Hola %s,
+                Se termino el partido %s.
+                !Gracias por jugar con nosotros!
+                """
+                .formatted(
+                        usuario.getNombreUsuario(),
+                        partido.getId()
+                );
+    }
+
+    public String templateCancelarPartido(Partido partido, Usuario usuario) {
+        return """
+                Hola %s,
+                Se cancelo el partido %s.
+                !Lo sentimos!!
+                """
+                .formatted(
+                        usuario.getNombreUsuario(),
+                        partido.getId()
+                );
     }
 }

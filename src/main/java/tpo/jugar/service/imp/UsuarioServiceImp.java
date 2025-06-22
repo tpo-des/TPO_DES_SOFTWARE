@@ -3,6 +3,7 @@ package tpo.jugar.service.imp;
 import org.springframework.stereotype.Service;
 import tpo.jugar.exception.NotFoundException;
 import tpo.jugar.model.deporte.Deporte;
+import tpo.jugar.model.notification.TipoEstrategiaNotificacion;
 import tpo.jugar.model.usuario.NivelUsuario;
 import tpo.jugar.model.usuario.Usuario;
 import tpo.jugar.repository.UsuarioRepository;
@@ -18,7 +19,6 @@ public class UsuarioServiceImp implements UsuarioService {
     public UsuarioServiceImp(UsuarioRepository repository) {
         this.repository = repository;
     }
-
 
     public List<Usuario> findAll() {
         return repository.findAll();
@@ -37,9 +37,17 @@ public class UsuarioServiceImp implements UsuarioService {
 
     @Override
     public Usuario create(Usuario usuario) {
+        Usuario usuarioConfigurado = setDefaults(usuario);
+        return repository.save(usuarioConfigurado);
+    }
+
+    private Usuario setDefaults(Usuario usuario) {
         if (usuario.getNivel() == null) {
             usuario.setNivel(NivelUsuario.PRINCIPIANTE);
         }
-        return repository.save(usuario);
+        if (usuario.getPreferenciaNotificacion() == null) {
+            usuario.setPreferenciaNotificacion(TipoEstrategiaNotificacion.EMAIL);
+        }
+        return usuario;
     }
 }

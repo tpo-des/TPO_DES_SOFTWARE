@@ -3,6 +3,8 @@ package tpo.jugar.model.usuario;
 import jakarta.persistence.*;
 import tpo.jugar.model.deporte.Deporte;
 import tpo.jugar.model.jugador.Jugador;
+import tpo.jugar.model.notification.EstrategiaDeNotificacion;
+import tpo.jugar.model.notification.TipoEstrategiaNotificacion;
 import tpo.jugar.model.partido.Partido;
 
 import java.util.ArrayList;
@@ -18,6 +20,7 @@ public class Usuario {
     private String email;
     private String password;
     private NivelUsuario nivel;
+    private TipoEstrategiaNotificacion preferenciaNotificacion;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "deporte_id")
@@ -33,11 +36,12 @@ public class Usuario {
 
     protected Usuario() {}
 
-    public Usuario(String nombreUsuario, String email, String password, NivelUsuario nivel) {
+    public Usuario(String nombreUsuario, String email, String password, NivelUsuario nivel, TipoEstrategiaNotificacion preferenciaNotificacion) {
         this.nombreUsuario = nombreUsuario;
         this.email = email;
         this.password = password;
         this.nivel = nivel;
+        this.preferenciaNotificacion = preferenciaNotificacion;
     }
 
     public Long getId() {
@@ -78,6 +82,14 @@ public class Usuario {
 
     public void setNivel(NivelUsuario nivel) {
         this.nivel = nivel;
+    }
+
+    public TipoEstrategiaNotificacion getPreferenciaNotificacion() {
+        return preferenciaNotificacion;
+    }
+
+    public void setPreferenciaNotificacion(TipoEstrategiaNotificacion preferenciaNotificacion) {
+        this.preferenciaNotificacion = preferenciaNotificacion;
     }
 
     public Deporte getDeporteFavorito() {
