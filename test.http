@@ -1,10 +1,39 @@
 
-#### Usuarios API
+#### Login API
+
+### Registrar un nuevo usuario
+POST http://localhost:8080/api/v1/auth/register
+Content-Type: application/json
+
+{
+  "nombreUsuario": "pepe",
+  "email": "test.fadga@gmail.com",
+  "password": "password123",
+  "nivel": "AVANZADO",
+  "deporteFavorito": {
+    "id": 1
+  }
+}
+
+#### Login con el usuario creado
+### con el token de resultado agregarlo a http-client.env.json en el value de token para poder authenticar
+POST http://localhost:8080/api/v1/auth/login
+Content-Type: application/json
+
+{
+  "username": "Claudio",
+  "password": "password123"
+}
+
+### API de usuarios
+### Obtener todos los usuarios
 
 GET http://localhost:8080/api/v1/usuarios
+Authorization: Bearer {{token}}
 
 ###
 POST http://localhost:8080/api/v1/usuarios
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
@@ -17,41 +46,49 @@ Content-Type: application/json
      }
 }
 
-###
-GET http://localhost:8080/api/v1/usuarios/1
+### Ver un usuario específico por su ID
+GET http://localhost:8080/api/v1/usuarios/302
+Authorization: Bearer {{token}}
+
+### Ver los partidos de un usuario específico por su ID
+GET http://localhost:8080/api/v1/usuarios/302/partidos
+Authorization: Bearer {{token}}
 
 
-###
-GET http://localhost:8080/api/v1/usuarios/1/partidos
-
-###
-
-PUT http://localhost:8080/api/v1/usuarios/2/partidos/152/confirmar
+### Confirmar un partido para un usuario específico
+PUT http://localhost:8080/api/v1/usuarios/302/partidos/confirmar
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
 }
 
 ### Deportes API
 
+### Obtener todos los deportes
 GET http://localhost:8080/api/v1/deportes
+Authorization: Bearer {{token}}
 
-###
+### Crear un nuevo deporte
 POST http://localhost:8080/api/v1/deportes
+Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-    "nombre": "Fútbol 5"
+    "nombre": "Tennis"
 }
 
 
 #### Partidos API
 
+### Obtener todos los partidos
 GET http://localhost:8080/api/v1/partidos?ubicacion=En%20el%20patio
+Authorization: Bearer {{token}}
 
-###
+### Crear un nuevo partido
 POST http://localhost:8080/api/v1/partidos
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
     "cantidadDeJugadores": 2,
@@ -63,27 +100,29 @@ Content-Type: application/json
     }
 }
 
-###
-GET http://localhost:8080/api/v1/partidos/152
+### Ver un partido específico por su ID
+GET http://localhost:8080/api/v1/partidos/552
+Authorization: Bearer {{token}}
 
-###
-
-PUT http://localhost:8080/api/v1/partidos/503/cancelar
+### Cancelar un partido específico por su ID
+PUT http://localhost:8080/api/v1/partidos/552/cancelar
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
 
 }
 
-###
-GET http://localhost:8080/api/v1/partidos/152/jugadores
+### Ver los jugadores de un partido específico por su ID
+GET http://localhost:8080/api/v1/partidos/552/jugadores
+Authorization: Bearer {{token}}
 
-###
-
-POST http://localhost:8080/api/v1/partidos/503/jugadores
+### Agregar un jugador a un partido específico por su ID
+POST http://localhost:8080/api/v1/partidos/552/jugadores
 Content-Type: application/json
+Authorization: Bearer {{token}}
 
 {
-  "usuarioId": 202,
+  "usuarioId": 302,
   "confirmado": true
 }

@@ -1,5 +1,6 @@
 package tpo.jugar.service.imp;
 
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import tpo.jugar.model.deporte.Deporte;
 import tpo.jugar.model.notification.TipoEstrategiaNotificacion;

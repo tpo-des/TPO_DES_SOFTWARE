@@ -18,7 +18,7 @@ public class EstadoConfirmado implements  EstadoPartido {
 
     @Override
     public String cancelar(ContextoEstadoPartido contexto) {
-        contexto.setEstado(new EstadoConfirmado());
+        contexto.setEstado(new EstadoCancelado());
         return "El partido con id " + contexto.getPartido().getId() + " ha sido cancelado.";
     }
 
