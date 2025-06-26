@@ -7,6 +7,10 @@ import org.springframework.stereotype.Service;
 import tpo.jugar.model.jugador.Jugador;
 import tpo.jugar.model.partido.Partido;
 import tpo.jugar.model.partido.estado.ContextoEstadoPartido;
+import tpo.jugar.model.partido.matchmaking.ContextoDeMatchMaking;
+import tpo.jugar.model.partido.matchmaking.EstrategiaDeMatchMaking;
+import tpo.jugar.model.partido.matchmaking.EstrategiaDeMatchMakingFactory;
+import tpo.jugar.model.partido.matchmaking.TipoEstrategiaMatchMaking;
 import tpo.jugar.model.usuario.Usuario;
 import tpo.jugar.service.JugadorService;
 import tpo.jugar.service.PartidoService;
@@ -56,6 +60,7 @@ public class JugadorServiceImp implements JugadorService {
         return jugador;
     }
 
+
     @Override
     public Jugador addJugador(long partidoId, long usuarioId, Boolean confirmado) {
         Partido partido = partidoService.getById(partidoId);
@@ -63,6 +68,7 @@ public class JugadorServiceImp implements JugadorService {
        return addJugador(new Jugador(partido, usuario, confirmado));
     }
 
+    @Override
     public Jugador addJugador(Jugador jugador) {
         ContextoEstadoPartido ctx = new ContextoEstadoPartido(eventPublisher, jugador.getPartido());
         String result = ctx.agregarJugador(jugador);
@@ -73,5 +79,15 @@ public class JugadorServiceImp implements JugadorService {
         logger.info(result);
         partidoService.update(ctx.getPartido());
         return jugador;
+    }
+
+    @Override
+    public Partido asignarPartido(long usuarioId, TipoEstrategiaMatchMaking tipoEstrategiaMatchMaking) {
+        Usuario usuario = usuarioService.getById(usuarioId);
+        ContextoDeMatchMaking ctx = new ContextoDeMatchMaking(this, partidoService);
+        EstrategiaDeMatchMaking estrategia = EstrategiaDeMatchMakingFactory.crear(tipoEstrategiaMatchMaking);
+        ctx.setEstrategiaMatchMaking(estrategia);
+        Partido partido = ctx.asignarPartidoA(usuario);
+        return partido;
     }
 }

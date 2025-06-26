@@ -10,14 +10,16 @@ public class UsuarioDto {
     private String password;
     private NivelUsuario nivel;
     private TipoEstrategiaNotificacion preferenciaNotificacion;
+    private String ubicacion;
     private DeporteDto deporteFavorito;
 
-    public UsuarioDto(Long id, String nombreUsuario, String email, String password, NivelUsuario nivel) {
+    public UsuarioDto(Long id, String nombreUsuario, String email, String password, NivelUsuario nivel, String ubicacion) {
         this.id = id;
         this.nombreUsuario = nombreUsuario;
         this.email = email;
         this.password = password;
         this.nivel = nivel;
+        this.ubicacion = ubicacion;
     }
 
     public String getNombreUsuario() {
@@ -74,5 +76,13 @@ public class UsuarioDto {
 
     public void setDeporteFavorito(DeporteDto deporteDto) {
         this.deporteFavorito = deporteDto;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
     }
 }

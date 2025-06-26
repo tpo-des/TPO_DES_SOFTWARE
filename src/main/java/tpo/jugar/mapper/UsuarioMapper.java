@@ -12,7 +12,8 @@ public class UsuarioMapper {
                 usuario.getNombreUsuario(),
                 usuario.getEmail(),
                 usuario.getPassword(),
-                usuario.getNivel()
+                usuario.getNivel(),
+                usuario.getUbicacion()
         );
         if (usuario.getDeporteFavorito() != null) {
             usuarioDto.setDeporteFavorito(DeporteMapper.toDto(usuario.getDeporteFavorito()));
@@ -26,7 +27,8 @@ public class UsuarioMapper {
                 usuarioDto.getEmail(),
                 usuarioDto.getPassword(),
                 usuarioDto.getNivel(),
-                usuarioDto.getPreferenciaNotificacion()
+                usuarioDto.getPreferenciaNotificacion(),
+                usuarioDto.getUbicacion()
         );
         if (usuarioDto.getDeporteFavorito() != null) {
             usuario.setDeporteFavorito(new Deporte(usuarioDto.getDeporteFavorito().getId()));

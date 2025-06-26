@@ -11,6 +11,7 @@ import tpo.jugar.model.event.PartidoCreadoEvento;
 import tpo.jugar.model.partido.Partido;
 import tpo.jugar.model.partido.estado.ContextoEstadoPartido;
 import tpo.jugar.model.partido.estado.TipoEstadoPartido;
+import tpo.jugar.model.usuario.NivelUsuario;
 import tpo.jugar.repository.PartidoRepository;
 import tpo.jugar.service.PartidoService;
 
@@ -40,12 +41,20 @@ public class PartidoServiceImp implements PartidoService {
     }
 
     @Override
+    public List<Partido> findNivelMinimo(NivelUsuario nivel) {
+        return repository.findByNivelMinimoGreaterThanEqual(nivel);
+    }
+
+    @Override
     public Partido getById(long id) {
         return repository.getReferenceById(id);
     }
 
     @Override
     public Partido create(Partido partido) {
+        if (partido.getNivelMinimo() == null) {
+            partido.setNivelMinimo(NivelUsuario.PRINCIPIANTE);
+        }
         Partido partidoGuardado = repository.save(partido);
         eventPublisher.publishEvent(new PartidoCreadoEvento(this, partidoGuardado));
         return partidoGuardado;

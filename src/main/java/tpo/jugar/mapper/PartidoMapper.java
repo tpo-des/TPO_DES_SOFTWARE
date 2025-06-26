@@ -12,8 +12,9 @@ public class PartidoMapper {
             partido.getCantidadDeJugadores(),
             partido.getUbicacion(),
             partido.getDuracionEnMinutos(),
-            partido.getFechaComienzo(),
-            DeporteMapper.toDto(partido.getDeporte())
+            DeporteMapper.toDto(partido.getDeporte()),
+            partido.getNivelMinimo(),
+            partido.getFechaComienzo()
         );
     }
 }

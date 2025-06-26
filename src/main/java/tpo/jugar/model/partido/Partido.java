@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 import tpo.jugar.model.deporte.Deporte;
 import tpo.jugar.model.jugador.Jugador;
 import tpo.jugar.model.partido.estado.TipoEstadoPartido;
+import tpo.jugar.model.usuario.NivelUsuario;
 import tpo.jugar.model.usuario.Usuario;
 
 import java.time.Duration;
@@ -23,6 +24,7 @@ public class Partido {
     private String ubicacion;
     private Long duracionEnMinutos;
     private LocalDateTime fechaComienzo;
+    private NivelUsuario nivelMinimo;
 
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "deporte_id")
@@ -45,6 +47,17 @@ public class Partido {
         this.deporte = deporte;
         this.estado = TipoEstadoPartido.NECESITAMOS_JUGADORES;
         this.jugadores = new ArrayList<>();
+    }
+
+    public Partido(Long id, Deporte deporte, NivelUsuario nivelMinimo, LocalDateTime fechaComienzo, Long duracionEnMinutos, String ubicacion, Integer cantidadDeJugadores, TipoEstadoPartido estado) {
+        this.id = id;
+        this.deporte = deporte;
+        this.nivelMinimo = nivelMinimo;
+        this.fechaComienzo = fechaComienzo;
+        this.duracionEnMinutos = duracionEnMinutos;
+        this.ubicacion = ubicacion;
+        this.cantidadDeJugadores = cantidadDeJugadores;
+        this.estado = estado;
     }
 
     public Long getId() {
@@ -113,6 +126,14 @@ public class Partido {
 
     public void addJugador(Jugador jugador) {
         this.jugadores.add(jugador);
+    }
+
+    public NivelUsuario getNivelMinimo() {
+        return nivelMinimo;
+    }
+
+    public void setNivelMinimo(NivelUsuario nivelMinimo) {
+        this.nivelMinimo = nivelMinimo;
     }
 
     public void removeJugador(Jugador jugador) {

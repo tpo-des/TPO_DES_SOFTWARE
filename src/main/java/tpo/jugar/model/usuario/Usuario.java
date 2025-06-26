@@ -20,6 +20,7 @@ public class Usuario {
     private String email;
     private String password;
     private NivelUsuario nivel;
+    private String ubicacion;
     private TipoEstrategiaNotificacion preferenciaNotificacion;
 
     @ManyToOne(fetch = FetchType.EAGER)
@@ -36,12 +37,13 @@ public class Usuario {
 
     protected Usuario() {}
 
-    public Usuario(String nombreUsuario, String email, String password, NivelUsuario nivel, TipoEstrategiaNotificacion preferenciaNotificacion) {
+    public Usuario(String nombreUsuario, String email, String password, NivelUsuario nivel, TipoEstrategiaNotificacion preferenciaNotificacion, String ubicacion) {
         this.nombreUsuario = nombreUsuario;
         this.email = email;
         this.password = password;
         this.nivel = nivel;
         this.preferenciaNotificacion = preferenciaNotificacion;
+        this.ubicacion = ubicacion;
     }
 
     public Long getId() {
@@ -106,5 +108,13 @@ public class Usuario {
 
     public void setJuegaEn(List<Jugador> juegaEn) {
         this.juegaEn = juegaEn;
+    }
+
+    public String getUbicacion() {
+        return ubicacion;
+    }
+
+    public void setUbicacion(String ubicacion) {
+        this.ubicacion = ubicacion;
     }
 }

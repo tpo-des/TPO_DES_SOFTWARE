@@ -1,6 +1,7 @@
 package tpo.jugar.dto;
 
 import tpo.jugar.model.partido.estado.TipoEstadoPartido;
+import tpo.jugar.model.usuario.NivelUsuario;
 
 import java.time.LocalDateTime;
 
@@ -11,16 +12,18 @@ public class PartidoDto {
     private String ubicacion;
     private Long duracionEnMinutos;
     private LocalDateTime fechaComienzo;
+    private NivelUsuario nivelMinimo;
     private DeporteDto deporte;
 
-    public PartidoDto(Long id, TipoEstadoPartido estado, Integer cantidadDeJugadores, String ubicacion, Long duracionEnMinutos, LocalDateTime fechaComienzo, DeporteDto deporte) {
+    public PartidoDto(Long id, TipoEstadoPartido estado, Integer cantidadDeJugadores, String ubicacion, Long duracionEnMinutos, DeporteDto deporte, NivelUsuario nivelMinimo, LocalDateTime fechaComienzo) {
         this.id = id;
         this.estado = estado;
         this.cantidadDeJugadores = cantidadDeJugadores;
         this.ubicacion = ubicacion;
         this.duracionEnMinutos = duracionEnMinutos;
-        this.fechaComienzo = fechaComienzo;
         this.deporte = deporte;
+        this.nivelMinimo = nivelMinimo;
+        this.fechaComienzo = fechaComienzo;
     }
 
     public Long getId() {
@@ -53,6 +56,14 @@ public class PartidoDto {
 
     public void setCantidadDeJugadores(Integer cantidadDeJugadores) {
         this.cantidadDeJugadores = cantidadDeJugadores;
+    }
+
+    public NivelUsuario getNivelMinimo() {
+        return nivelMinimo;
+    }
+
+    public void setNivelMinimo(NivelUsuario nivelMinimo) {
+        this.nivelMinimo = nivelMinimo;
     }
 
     public Long getDuracionEnMinutos() {

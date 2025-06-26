@@ -7,9 +7,10 @@ Content-Type: application/json
 
 {
   "nombreUsuario": "pepe",
-  "email": "test.fadga@gmail.com",
+  "email": "adafs.fadga@gmail.com",
   "password": "password123",
   "nivel": "AVANZADO",
+  "ubicacion": "Argentina",
   "deporteFavorito": {
     "id": 1
   }
@@ -38,20 +39,21 @@ Content-Type: application/json
 
 {
      "nombreUsuario": "Juan pepe",
-     "email": "alan.fadga@gmail.com",
+     "email": "teta.fadga@gmail.com",
      "password": "password123",
      "nivel": "AVANZADO",
+     "ubicacion": "Argentina",
      "deporteFavorito": {
             "id": 1
      }
 }
 
 ### Ver un usuario específico por su ID
-GET http://localhost:8080/api/v1/usuarios/302
+GET http://localhost:8080/api/v1/usuarios/453
 Authorization: Bearer {{token}}
 
 ### Ver los partidos de un usuario específico por su ID
-GET http://localhost:8080/api/v1/usuarios/302/partidos
+GET http://localhost:8080/api/v1/usuarios/503/partidos
 Authorization: Bearer {{token}}
 
 
@@ -61,6 +63,15 @@ Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
+}
+
+### Add matchmaking para un usuario específico
+POST http://localhost:8080/api/v1/usuarios/503/partidos/matchmaking
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "tipo": "POR_NIVEL"
 }
 
 ### Deportes API
@@ -92,9 +103,10 @@ Authorization: Bearer {{token}}
 
 {
     "cantidadDeJugadores": 2,
-    "ubicacion": "En el patio",
+    "ubicacion": "Argentina",
     "duracionEnMinutos": 90,
     "fechaComienzo": "2023-10-01T15:00:00",
+    "nivelMinimo": "PRINCIPIANTE",
     "deporte": {
         "id": 1
     }
@@ -105,13 +117,13 @@ GET http://localhost:8080/api/v1/partidos/552
 Authorization: Bearer {{token}}
 
 ### Cancelar un partido específico por su ID
-PUT http://localhost:8080/api/v1/partidos/552/cancelar
+PUT http://localhost:8080/api/v1/partidos/652/cancelar
 Content-Type: application/json
 Authorization: Bearer {{token}}
 
 {
-
 }
+
 
 ### Ver los jugadores de un partido específico por su ID
 GET http://localhost:8080/api/v1/partidos/552/jugadores
